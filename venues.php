@@ -152,8 +152,10 @@
                 $args = array(
                     'post_type' => 'venue',
                     'post_status' => 'publish',
-     				'sort_column'   => 'menu_order',
-                    'posts_per_page' => -1
+                    'orderby' => 'menu_order',
+                    'posts_per_page' => -1,
+                    'order'          => 'ASC',
+                    'post_parent' => 0
                 );
 
                 // define loop
@@ -217,6 +219,79 @@
 						echo '<td>'.$reception.'</td>'."\r\n";
 						echo '<td>'.$rate.'</td>'."\r\n";
 					echo '</tr>'."\r\n";
+
+                    $args2 = array(
+                        'post_type' => 'venue',
+                        'post_status' => 'publish',
+                        'orderby' => 'menu_order',
+                        'posts_per_page' => -1,
+                        'post_parent'    => $post->ID,
+                        'order'          => 'ASC',
+                        'orderby'        => 'menu_order'
+                    );
+
+                    // define loop
+                    $loop2 = new WP_Query( $args2 );
+
+                    while ($loop2->have_posts()) : $loop2->the_post();
+                        $location = get_field('location');
+                        $venue_name = get_the_title();
+                        $dimentions = get_field('dimentions');
+                        $seated = get_field('seated');
+                        $reception = get_field('reception');
+                        $rate = get_field('rate');
+                        $floor_plan_pdf = get_field('floor_plan_pdf');
+
+                            if($location == ''){
+                                $location = '';
+                            }
+
+                            if($dimentions == ''){
+                                $dimentions = '';
+                            }
+
+                            if($seated == ''){
+                                $seated = '';
+                            }
+
+                            if($reception == ''){
+                                $reception = '';
+                            }
+
+                            if($rate == ''){
+                                $rate = '';
+                            }
+
+                            $floor_plan = '';
+                            if($floor_plan_pdf != ''){
+                                $floor_plan = '<a href="'.$floor_plan_pdf.'" target="_blank">download</a>';
+                            }else{
+                                $floor_plan = '';
+                            }
+
+                            if($post->post_parent == 0){
+                                $location = '<strong>'.$location.'</strong>';
+                                $venue_name = '<strong>'.$venue_name.'</strong>';
+                                $dimentions = '<strong>'.$dimentions.'</strong>';
+                                $seated = '<strong>'.$seated.'</strong>';
+                                $reception = '<strong>'.$reception.'</strong>';
+                                $rate = '<strong>'.$rate.'</strong>';
+                                $floor_plan_pdf = '<strong>'.$floor_plan_pdf.'</strong>';
+                            }
+
+
+                            echo '<tr>'."\r\n";
+                                echo '<td>'.$location.'</td>'."\r\n";
+                                echo '<td>'.$venue_name.'</td>'."\r\n";
+                                //echo '<td>'.$dimentions.'</td>'."\r\n";
+                                echo '<td>'.$floor_plan.'</td>'."\r\n";
+                                echo '<td>'.$seated.'</td>'."\r\n";
+                                echo '<td>'.$reception.'</td>'."\r\n";
+                                echo '<td>'.$rate.'</td>'."\r\n";
+                            echo '</tr>'."\r\n";
+                    endwhile;
+                
+
                 endwhile;
                 
                 // reset query

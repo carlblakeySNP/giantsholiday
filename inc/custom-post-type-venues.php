@@ -57,7 +57,7 @@ function create_addon_taxonomies() {
 		'labels' => $labels, /* NOTICE: Here is where the $labels variable is used */
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'type' ),
+		//'rewrite' => array( 'slug' => 'type' ),
 	));
 
 }

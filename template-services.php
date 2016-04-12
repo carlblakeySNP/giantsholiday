@@ -39,12 +39,12 @@ get_header();
 
                 }else{
 
-                    echo '<div class="caption">'.
-                            '<div class="container">'.
-                                '<div class="text">'.get_sub_field('page_gallery_caption').'</div>'.
-                                '<div class="triangle"></div>'.
-                            '</div>'.
-                        '</div>';
+                    // echo '<div class="caption">'.
+                    //         '<div class="container">'.
+                    //             '<div class="text">'.get_sub_field('page_gallery_caption').'</div>'.
+                    //             '<div class="triangle"></div>'.
+                    //         '</div>'.
+                    //     '</div>';
                 }
 
                 echo '</div>';
@@ -166,7 +166,7 @@ get_header();
 
     <?php else : ?>
 
-        <?php get_template_part( 'content', 'none' ); ?>
+        <?php //get_template_part( 'content', 'none' ); ?>
 
     <?php endif; ?>
 <!-- Modal -->

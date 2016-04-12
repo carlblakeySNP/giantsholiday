@@ -37,11 +37,11 @@
                  ?> <div class="slick-item type_events video" id="slide<?php echo $i; ?>"> <?php
                     $source = 'https://www.youtube.com/embed/';
                     if(get_field('video_souce') == 'Vimeo'){
-                       $source = 'https://player.vimeo.com/video/'; 
+                       $source = 'https://player.vimeo.com/video/';
                     }
                     echo '<iframe width="100%" height="100%" src="'.$source.get_field('video_code').'/"  frameborder="0" allowfullscreen></iframe>';
 
-                ?>  </div>  <?php               
+                ?>  </div>  <?php
             else:
 
                 $styles = 'style="background-image:url('.$url.');"';
@@ -53,7 +53,7 @@
                 echo '<h2>'.get_the_title().'</h2>';
                 echo get_the_content();
                 if($link != ''){
-                    echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>'; 
+                    echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>';
                 }
                 echo '</div>';
                 echo '<div class="overlay-right">';
@@ -87,7 +87,7 @@
                 </div><!-- .entry-content -->
                 </div>
             </div>
-            <?php 
+            <?php
                 $video_title = get_field('video_title');
                 $video_copy = get_field('video_copy');
                 $video_url = get_field('video_url');
@@ -115,7 +115,7 @@
 
             	// query arguments
                 $args = array(
-                    'post_type' => 'event',
+                    'post_type' => 'gevent',
                     'post_parent' => 0,
                     'post_status' => 'publish',
                     'sort_column'   => 'menu_order',
@@ -160,7 +160,7 @@
                    <?php
 
                 endwhile;
-                
+
                 // reset query
                 wp_reset_query();
 
@@ -173,13 +173,13 @@
 <?php
 $args = array( 'order' => 'DESC',);
 
-$terms = get_terms( 'year', $args );
+$terms = get_terms( 'eventyear', $args );
  if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
      foreach ( $terms as $term ) :
         echo '<h3>'.$term->slug.'</h3>';
                // query arguments
                 $args = array(
-                    'post_type' => 'event',
+                    'post_type' => 'gevent',
                     'post_parent' => 0,
                     'post_status' => 'publish',
                     'orderby' => 'name',
@@ -187,7 +187,7 @@ $terms = get_terms( 'year', $args );
                     'numberposts' => -1,
                     'tax_query' => array(
                         array(
-                            'taxonomy' => 'year',
+                            'taxonomy' => 'eventyear',
                             'field' => 'slug',
                             'terms' => $term->slug
                         )
@@ -213,7 +213,7 @@ $terms = get_terms( 'year', $args );
                         // output list item
                         // if(get_field('event_year') != '') :
 
-                    
+
 ?>
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 <?php
@@ -228,7 +228,7 @@ $terms = get_terms( 'year', $args );
             <br />
 
 <?php
-        
+
      endforeach;
  endif;
 

@@ -1,7 +1,7 @@
 <?php
 add_action( 'init', 'create_post_type_events' );
 function create_post_type_events() {
-	register_post_type( 'event',
+	register_post_type( 'gevent',
 		array(
 			'labels' => array(
 				'name' => __( 'Events' ),
@@ -52,12 +52,12 @@ function create_year_taxonomies() {
 		'new_item_name' => __( 'New Year Name' ),
 	); 	
 
-	register_taxonomy( 'year', array( 'event' ), array(
+	register_taxonomy( 'eventyear', array( 'gevent' ), array(
 		'hierarchical' => true,
 		'labels' => $labels, /* NOTICE: Here is where the $labels variable is used */
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'type' ),
+		//'rewrite' => array( 'slug' => 'type' ),
 	));
 
 }
@@ -71,7 +71,7 @@ add_action('admin_head', 'post_type_icon_event');
 // override post type icons for the admin menu
 function post_type_icon_event() {
 	echo '<style type="text/css">
-			#menu-posts-event div.wp-menu-image:before {
+			#menu-posts-gevent div.wp-menu-image:before {
 				content: "\f073" !important;
 				font-family: "FontAwesome" !important;
  				font-size: 18px !important;
