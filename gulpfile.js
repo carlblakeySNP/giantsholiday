@@ -20,20 +20,6 @@ var description = 'This is a custom theme for Giants Enterprises';			// MyTheme 
 var version = '0.0.1';				// 0.0.1
 var tags = '';					// apples, oranges, bananas
 
-gulp.task('init', function(){
-	gulp.src(['**/*','!gulpfile.js','!node_modules'])
-		.pipe(replace("'_s'","'" + themeSlug + "'"))
-		.pipe(replace('_s_', themeSlug + '_'))
-		.pipe(replace('Text Domain: _s', 'Text Domain: ' + themeSlug))
-		.pipe(replace('underscores.me', themeURI))
-		.pipe(replace('Automattic', author))
-		.pipe(replace('automattic.com', authorURI))
-		.pipe(replace(' _s', ' ' + themeName))
-		.pipe(replace('_s-', themeSlug + '-'))
-		.pipe(replace(/Description\:(.+)/, 'Description: ' + description))
-		.pipe(replace(/Version\:(.+)/, 'Version: ' + version))
-		.pipe(gulp.dest('.'));
-});
 
 gulp.task('scripts', function() {
     gulp.src([

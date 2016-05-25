@@ -1,44 +1,49 @@
-_s
-===
+Giants Theme
+============
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Synopsis
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+Based on a theme called `_s`, or `underscores`.
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in functions.php and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Getting Started
 
-Getting Started
----------------
+This theme follows some of the `_s` conventions but mostly abandoned due to heavier customizations. Some notable customizations are:
 
-If you want to keep it simple, head over to http://giantsenterprises.com and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+	* Node.js to compile LESS and JS
+	* Custom Post Types incuded in functions.php file
+	* Custom Shortcodes /inc/shortcodes.php
+	* Advanced Custom Fields (ACF) plugin included in the theme. 
 
-If you want to set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else - Like, say, `megatherium` - then you'll need to do a five-step find and replace on the name in all the templates.
+The template files all start with `template-...php` and may include a get_template_part function and including another file. An example is the `template-events.php` which includes a tempalte part called `events.php`.
 
-1. Search for `'giants'` (inside single quotations) to capture the text domain.
-2. Search for `giants_` to capture all the function names.
-3. Search for `Text Domain: giants` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `giants-` to capture prefixed handles.
+## Development (Node)
 
-OR
+We are using Node for the development process for compiling scripts and LESS and moving images into the build directory. You can start with:
 
-* Search for: `'giants'` and replace with: `'megatherium'`
-* Search for: `giants_` and replace with: `megatherium_`
-* Search for: `Text Domain: giants` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `giants-` and replace with: `megatherium-`
+`npm install`
 
-Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
+and then
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+`gulp build`
 
-Good luck!
+if you like to watch your files as they are updated use the gulp defaut.
+
+`gulp`
+
+## Custom Post Types
+
+We use Custom Post Types to store unique data across the site. Please see the functions.php file for more info.
+
+	* Slides
+	* Events
+	* Venues
+	* Services
+
+
+## Advanced Custom Fields
+
+`/inc/advanced-custom-fields.php` is included along with the plugin to define the addition inputs on various pages. If you look in the functions.php file we ask if the current hosts is production in that case we include the plugin into the them. Otherwise we use the plugin locally so we have a visual interface for building custom fields. The end user does not need to see this plugin so we decided to have it included. 
+
+To regenerate the custom fields into a new development please look into [ACF recovery plugin](https://github.com/seamusleahy/ACF-PHP-Recovery).
+
 # giants
