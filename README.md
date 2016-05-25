@@ -1,9 +1,12 @@
 Giants Theme
 ============
 
+A custom theme for [giantsenterprises.com](http://giantsenterprises.com/)
+
 ## Synopsis
 
 Based on a theme called `_s`, or `underscores`.
+[underscores.me](http://underscores.me/)
 
 ## Getting Started
 
@@ -26,7 +29,7 @@ and then
 
 `gulp build`
 
-if you like to watch your files as they are updated use the gulp defaut.
+if you like to watch your files as they are updated use the gulp default.
 
 `gulp`
 
