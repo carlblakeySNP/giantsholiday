@@ -171,7 +171,7 @@
             <h1 class="entry-title notop">Recent Past Events</h1>
 
 <?php
-$args = array( 'order' => 'DESC',);
+$args = array( 'order' => 'ASC',);
 
 $terms = get_terms( 'eventyear', $args );
  if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :

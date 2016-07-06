@@ -148,7 +148,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'gevent',
+					'value' => 'event',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -450,7 +450,7 @@ if(function_exists("register_field_group"))
 				'post_type' => array (
 					0 => 'page',
 					1 => 'venue',
-					2 => 'gevent',
+					2 => 'event',
 					3 => 'service',
 				),
 				'allow_null' => 1,
@@ -560,6 +560,90 @@ if(function_exists("register_field_group"))
 		'options' => array (
 			'position' => 'acf_after_title',
 			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_timeline',
+		'title' => 'Timeline',
+		'fields' => array (
+			array (
+				'key' => 'field_57682258e12f8',
+				'label' => 'Timeline',
+				'name' => 'timeline',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_57682268e12f9',
+						'label' => 'Year',
+						'name' => 'timeline_year',
+						'type' => 'number',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'min' => '',
+						'max' => '',
+						'step' => '',
+					),
+					array (
+						'key' => 'field_57682279e12fa',
+						'label' => 'Title',
+						'name' => 'timeline_title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_5768229de12fb',
+						'label' => 'Copy',
+						'name' => 'timeline_copy',
+						'type' => 'wp_wysiwyg',
+						'column_width' => '',
+						'default_value' => '',
+						'teeny' => 0,
+						'media_buttons' => 1,
+						'dfw' => 1,
+					),
+					array (
+						'key' => 'field_576822b0e12fc',
+						'label' => 'Image',
+						'name' => 'timeline_image',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-timeline.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -929,6 +1013,7 @@ if(function_exists("register_field_group"))
 		'menu_order' => 99,
 	));
 }
+
 
 
 

@@ -63,7 +63,7 @@ gulp.task('lr-server', function() {
 
 gulp.task('watch', function () {
     gulp.watch('src/js/**', ['scripts']);
-    gulp.watch('src/less/**', ['stylesDev']);
+    gulp.watch('src/less/**', ['styles']);
     gulp.watch('src/img/**', ['images']);
 });
 
