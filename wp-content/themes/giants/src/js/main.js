@@ -209,14 +209,44 @@ $(document).ready(UTIL.loadEvents);
         }
 
     }
+
+
+
+    function scrolling(){
+
+        var h = parseInt($(window).height(), 0),
+        sp = parseInt($(window).scrollTop(), 0);
+
+        $('#Timeline .item').each(function(i){
+            var self = $(this);
+            var el = $(self).offset();
+            var elt = sp - (el.top-h);
+            if(elt > 0){
+                var j = 100 - (elt/h*100);
+                if(j < 50){
+                    $(self).addClass('animate');
+                    //console.log("item: "+i+" num: "+j);
+                }else if(j > 50){
+                    $(this).removeClass('animate');
+                }                
+            }
+        });
+    }
+
+
+
+
     $(window).scroll( function(e){
         scrollAll();
+        scrolling();
     });
     $(window).resize( function(e){
         scrollAll();
     });
     $(window).load( function(e){
         scrollAll();
+        scrolling();
+        
     });
 
     $('a[href*=#]:not([href=#])').click(function() {

@@ -623,6 +623,29 @@ if(function_exists("register_field_group"))
 						'preview_size' => 'thumbnail',
 						'library' => 'all',
 					),
+					array (
+						'key' => 'field_5795d7e634731',
+						'label' => 'Second Caption',
+						'name' => 'second_caption',
+						'type' => 'wp_wysiwyg',
+						'instructions' => 'optional',
+						'column_width' => '',
+						'default_value' => '',
+						'teeny' => 0,
+						'media_buttons' => 1,
+						'dfw' => 1,
+					),
+					array (
+						'key' => 'field_5795d80634732',
+						'label' => 'Second Image',
+						'name' => 'second_image',
+						'type' => 'image',
+						'instructions' => 'optional',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
 				),
 				'row_min' => '',
 				'row_limit' => '',
@@ -1013,6 +1036,7 @@ if(function_exists("register_field_group"))
 		'menu_order' => 99,
 	));
 }
+
 
 
 

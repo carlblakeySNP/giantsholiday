@@ -34,6 +34,7 @@ function my_remove_menu_pages() {
 /**
  * ACF Include on production
  */
+global $devmode;
 $host = $_SERVER['HTTP_HOST'];
 if($host == "giantsent.wpengine.com" or $host == "giantsenterprises.com" or $host == "giants.brick.agency" or $host == "giantsent.staging.wpengine.com" ) {
 	define( 'ACF_LITE' , true );
@@ -41,6 +42,9 @@ if($host == "giantsent.wpengine.com" or $host == "giantsenterprises.com" or $hos
 	include_once locate_template('/inc/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' );
 	include_once locate_template('/inc/acf-repeater/acf-repeater.php' );
 	include_once locate_template('/inc/advanced-custom-fields.php' );
+	$devmode = false;
+}else{
+	$devmode = true;
 }
 
 
