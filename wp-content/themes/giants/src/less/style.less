@@ -234,6 +234,24 @@ header#masthead{
 	}
 }
 #Timeline{
+	.scroll{
+		opacity:1;
+		position: fixed;
+		bottom:20px;
+		left:50%;
+		z-index: 999;
+		padding:10px;
+		background-color: rgba(255,255,255,0.7);
+		width:150px;
+		text-align: center;
+		margin-left: -75px;
+		&:before{
+			content: '⇣ ';
+		}
+	}
+	&.removescroll{
+		opacity:0;
+	}
 	.leader{
 		padding:20px 0;
 	}
@@ -271,6 +289,25 @@ header#masthead{
 					margin-right:0;
 				}
 			}
+			&.left{
+				.image{
+					transform: rotate(5deg);
+				}
+			}
+			&.right{
+				.image{
+					transform: rotate(-5deg);
+				}
+			}
+			&.full{
+				.copy{
+					opacity:1;
+				}
+				.image{
+					opacity:1;
+					
+				}
+			}
 			&.double{
 				.copy{
 					opacity:1;
@@ -291,6 +328,18 @@ header#masthead{
 					}
 				}
 
+			}
+		}
+		&.full{
+			.copy{
+				opacity: 0;
+				width:100%;
+			}
+			.image{
+				width:100%;
+				img{
+					margin:0;
+				}
 			}
 		}
 		&.double{
@@ -316,10 +365,14 @@ header#masthead{
 			}
 		}
 		.year{
-			font-size: 32px;
+			font-size: 28px;
 			color:@orange;
 			margin:0;
 
+		}
+		h2{
+			font-size: 28px;
+			margin:0;
 		}
 		.copy{
 			opacity: 0;
@@ -328,10 +381,6 @@ header#masthead{
 			background: transparent;
 			padding-top:20px;
 			transition: all 0.6s ease;
-			h2{
-
-			}
-			.body{}
 		}
 		.image{
 			opacity: 0;

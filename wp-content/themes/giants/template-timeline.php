@@ -19,6 +19,9 @@ get_header();
     <?php $i = 0; while( have_rows('timeline') ): the_row(); 
  
         // vars
+
+    $full_single_or_double = get_sub_field('full_single_or_double');
+
     $timeline_year = get_sub_field('timeline_year');
     $timeline_title = get_sub_field('timeline_title');
     $timeline_copy = get_sub_field('timeline_copy');
@@ -27,7 +30,7 @@ get_header();
     $second_caption = get_sub_field('second_caption');
     $second_image = get_sub_field('second_image')['sizes']['large'];
 
-    if($second_caption != '') :
+    if($full_single_or_double == 'Double') :
  
         ?>
         <div class="item double">
@@ -47,7 +50,21 @@ get_header();
                 <div class="body"><?php echo $second_caption; ?></div>
             </div>
         </div>
-    <?php else : ?>
+    <?php elseif($full_single_or_double == 'Full') : ?>
+        <div class="item full">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/logo-bg.png" class="hr-logo" />
+            
+            <div class="copy">
+                <p class="year"><span><?php echo $timeline_year; ?></span></p>
+                <h2><?php echo $timeline_title; ?></h2>
+                
+            </div>
+            <div class="image"><div class="img-wrap"><img src="<?php echo $timeline_image; ?>" /></div></div>
+            <div class="copy">
+                <div class="body"><?php echo $timeline_copy; ?></div>
+            </div>
+        </div>
+        <?php else : ?>
         <div class="item<?php echo ($i % 2 == 0) ? ' left' : ' right' ;?>">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/logo-bg.png" class="hr-logo" />
             
@@ -63,6 +80,7 @@ get_header();
     
 <?php endif; ?>
     </div>
+    <div class="scroll">Scroll</div>
 </div>
 <?php endwhile; endif; ?>
 

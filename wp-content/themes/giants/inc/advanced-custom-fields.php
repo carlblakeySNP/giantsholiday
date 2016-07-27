@@ -576,6 +576,22 @@ if(function_exists("register_field_group"))
 				'type' => 'repeater',
 				'sub_fields' => array (
 					array (
+						'key' => 'field_5799343ddc95c',
+						'label' => 'Full, Single or Double',
+						'name' => 'full_single_or_double',
+						'type' => 'radio',
+						'column_width' => '',
+						'choices' => array (
+							'Full' => 'Full',
+							'Single' => 'Single',
+							'Double' => 'Double',
+						),
+						'other_choice' => 0,
+						'save_other_choice' => 0,
+						'default_value' => '',
+						'layout' => 'horizontal',
+					),
+					array (
 						'key' => 'field_57682268e12f9',
 						'label' => 'Year',
 						'name' => 'timeline_year',
@@ -1036,7 +1052,6 @@ if(function_exists("register_field_group"))
 		'menu_order' => 99,
 	));
 }
-
 
 
 

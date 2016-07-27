@@ -231,6 +231,13 @@ $(document).ready(UTIL.loadEvents);
                 }                
             }
         });
+        var tl = $('#Timeline').offset();
+        var tlh = tl.top + $('#Timeline').height();
+        if(sp > tlh){
+             $('#Timeline').addClass('removescroll');
+        }else{
+            $('#Timeline').removeClass('removescroll');
+        }
     }
 
 
