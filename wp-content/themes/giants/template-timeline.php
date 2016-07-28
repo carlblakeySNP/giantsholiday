@@ -39,16 +39,23 @@ get_header();
             <div class="copy">
                 <p class="year"><span><?php echo $timeline_year; ?></span></p>
                 <h2><?php echo $timeline_title; ?></h2>
-                
+                <?php if($second_caption == '') : ?>
+                    <div class="body"><?php echo $timeline_copy; ?></div>
+                <?php endif; ?>
             </div>
             <div class="left">
                 <div class="image"><div class="img-wrap"><img src="<?php echo $timeline_image; ?>" /></div></div>
-                <div class="body"><?php echo $timeline_copy; ?></div>
+                <?php if($second_caption != '') : ?>
+                    <div class="body"><?php echo $timeline_copy; ?></div>
+                <?php endif; ?>
             </div>
             <div class="right">
                 <div class="image"><div class="img-wrap"><img src="<?php echo $second_image; ?>" /></div></div>
-                <div class="body"><?php echo $second_caption; ?></div>
+                <?php if($second_caption != '') : ?>
+                    <div class="body"><?php echo $second_caption; ?></div>
+                <?php endif; ?>
             </div>
+            <div class="clear"></div>
         </div>
     <?php elseif($full_single_or_double == 'Full') : ?>
         <div class="item full">
