@@ -213,30 +213,31 @@ $(document).ready(UTIL.loadEvents);
 
 
     function scrolling(){
+        if ( $( "#Timeline" ).length ) {
+            var h = parseInt($(window).height(), 0),
+            sp = parseInt($(window).scrollTop(), 0);
 
-        var h = parseInt($(window).height(), 0),
-        sp = parseInt($(window).scrollTop(), 0);
-
-        $('#Timeline .item').each(function(i){
-            var self = $(this);
-            var el = $(self).offset();
-            var elt = sp - (el.top-h);
-            if(elt > 0){
-                var j = 100 - (elt/h*100);
-                if(j < 50){
-                    $(self).addClass('animate');
-                    //console.log("item: "+i+" num: "+j);
-                }else if(j > 50){
-                    $(this).removeClass('animate');
-                }                
+            $('#Timeline .item').each(function(i){
+                var self = $(this);
+                var el = $(self).offset();
+                var elt = sp - (el.top-h);
+                if(elt > 0){
+                    var j = 100 - (elt/h*100);
+                    if(j < 50){
+                        $(self).addClass('animate');
+                        //console.log("item: "+i+" num: "+j);
+                    }else if(j > 50){
+                        $(this).removeClass('animate');
+                    }                
+                }
+            });
+            var tl = $('#Timeline').offset();
+            var tlh = tl.top + $('#Timeline').height();
+            if(sp > tlh){
+                 $('#Timeline').addClass('removescroll');
+            }else{
+                $('#Timeline').removeClass('removescroll');
             }
-        });
-        var tl = $('#Timeline').offset();
-        var tlh = tl.top + $('#Timeline').height();
-        if(sp > tlh){
-             $('#Timeline').addClass('removescroll');
-        }else{
-            $('#Timeline').removeClass('removescroll');
         }
     }
 
