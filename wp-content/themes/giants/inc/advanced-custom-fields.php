@@ -341,7 +341,7 @@ if(function_exists("register_field_group"))
 						'placeholder' => '',
 						'maxlength' => '',
 						'rows' => '',
-						'formatting' => 'br',
+						'formatting' => 'html',
 					),
 					array (
 						'key' => 'field_54e23e6019445',
@@ -353,7 +353,7 @@ if(function_exists("register_field_group"))
 						'placeholder' => '',
 						'maxlength' => '',
 						'rows' => '',
-						'formatting' => 'br',
+						'formatting' => 'html',
 					),
 					array (
 						'key' => 'field_54e23e6f19446',
