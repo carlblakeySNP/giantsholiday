@@ -450,7 +450,7 @@ if(function_exists("register_field_group"))
 				'post_type' => array (
 					0 => 'page',
 					1 => 'venue',
-					2 => 'event',
+					2 => 'gevent',
 					3 => 'service',
 				),
 				'allow_null' => 1,
