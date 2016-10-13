@@ -46,9 +46,16 @@
 
 <!--gulpHeadStart edited by gulpfile.js--><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/build/css/style.min.css"><!--gulpHeadEnd-->
 
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css' rel='stylesheet' />
+    
 <?php wp_head(); ?>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/build/js/main.min.js"></script>
-
+<style>
+    .scrolloff {
+        pointer-events: none;
+    }
+</style>
 </head>
 
 <body <?php body_class(); ?>>

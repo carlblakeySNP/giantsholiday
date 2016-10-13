@@ -33,8 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-top">
-            <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v3/jcnh74.ikf4e7k8/attribution.html'></iframe>
+        <div class="footer-top" id="map">
         </div>
 
         <div class="footer-middle">
@@ -54,10 +53,21 @@
         </div>  
     </footer>
 </div>
-
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmRhdmlzIiwiYSI6ImNpdThybXg1cTAwNnIyb3RxOGt5amF2bzIifQ.dIR470x1E_JrDsP7jjjmjw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/rdavis/ciu8udbxb001p2ilftmbfm2pn', //stylesheet location
+    center: [-122.390,37.778], // starting position
+    zoom: 16 // starting zoom
+});
+map.scrollZoom.disable();
+map.addControl(new mapboxgl.Navigation());
+</script>
 <?php
 if(is_front_page()) :
 ?>
+
 <script>
 
 $(function() {
