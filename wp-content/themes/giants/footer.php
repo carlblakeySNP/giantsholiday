@@ -54,15 +54,19 @@
     </footer>
 </div>
 <script>
+
 mapboxgl.accessToken = 'pk.eyJ1IjoicmRhdmlzIiwiYSI6ImNpdThybXg1cTAwNnIyb3RxOGt5amF2bzIifQ.dIR470x1E_JrDsP7jjjmjw';
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/rdavis/ciu8udbxb001p2ilftmbfm2pn', //stylesheet location
-    center: [-122.390,37.778], // starting position
+    center: [-122.3895,37.7785], // starting position
     zoom: 16 // starting zoom
 });
 map.scrollZoom.disable();
 map.addControl(new mapboxgl.Navigation());
+$(function() {
+    setTimeout($('.mapboxgl-canvas').css({left:0,right:0,bottom:0,top:0}), 2000);
+});
 </script>
 <?php
 if(is_front_page()) :
