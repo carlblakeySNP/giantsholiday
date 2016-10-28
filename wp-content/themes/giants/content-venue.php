@@ -68,7 +68,7 @@
 		        			<div class="content">
 		        				<h2><?php echo $venue->post_title; ?></h2>
 		        				<p><?php echo $venue->post_excerpt; ?></p>
-		        				<a href="<?php echo $venue->guid; ?>" class="">Learn More &raquo;</a>
+		        				<a href="<?php the_permalink($venue->ID); ?>" class="">Learn More &raquo;</a>
 		        			</div>
 		        		</div>
 	        		</div>
@@ -87,7 +87,7 @@
 	        				<div class="content">
 	        					<h2><?php echo $venue->post_title; ?></h2>
 	        					<p><?php echo $venue->post_excerpt; ?></p>
-		        				<a href="<?php echo $venue->guid; ?>" class="">Learn More &raquo;</a>
+		        				<a href="<?php the_permalink($venue->ID); ?>" class="">Learn More &raquo;</a>
 	        				</div>
 	        			</div>
 	        		</div>
