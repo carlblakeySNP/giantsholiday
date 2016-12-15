@@ -24,6 +24,9 @@ get_header();
 
             $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
             $styles = 'style="background-image:url('.$url.');"';
+            $hide_on_homepage = get_field("hide_on_homepage");
+            if($hide_on_homepage == '') :
+
 
             // output list item
             ?>
@@ -42,6 +45,7 @@ $source = 'https://www.youtube.com/embed/';
     echo '<div class="copy">';
     echo '<h2>'.get_the_title().'</h2>';
     echo get_the_content();
+    echo $hide_on_homepage;
     echo '<p><a href='.get_field("button_link").' class="button">'.get_field("button_copy").'</a></p>'; 
     echo '</div>';
     echo '</div>';
@@ -62,6 +66,7 @@ $source = 'https://www.youtube.com/embed/';
 
                 </div>
             <?php
+            endif;
             $i++;
         endwhile;
         
@@ -83,6 +88,8 @@ $source = 'https://www.youtube.com/embed/';
 
             $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
             $styles = 'style="background-image:url('.$url.');"';
+            $hide_on_homepage = get_field("hide_on_homepage");
+            if($hide_on_homepage != '1') :
 
             // output list item
             ?>
@@ -90,38 +97,42 @@ $source = 'https://www.youtube.com/embed/';
 <?php
 $layout = get_field('layout_type');
 $link = get_field("button_link");
+$hide_on_homepage = get_field("hide_on_homepage");
 if($link == ''){
     $link = get_field('hard_link');
 }
-if($layout == 'video'){
-$source = 'https://www.youtube.com/embed/';
-    if(get_field('video_souce') == 'Vimeo'){
-       $source = 'https://player.vimeo.com/video/'; 
+if($hide_on_homepage != '1'){
+    if($layout == 'video'){
+        $source = 'https://www.youtube.com/embed/';
+        if(get_field('video_souce') == 'Vimeo'){
+           $source = 'https://player.vimeo.com/video/'; 
+        }
+        echo '<iframe width="100%" height="100%" src="'.$source.get_field('video_code').'/"  frameborder="0" allowfullscreen></iframe>';
+    }elseif($layout == 'footer'){
+        echo '<div class="navarea">';
+        echo '<div class="copy">';
+        echo '<h2>'.get_the_title().'</h2>';
+        echo get_the_content();
+        echo '<p><a href="'.$link.'" class="button">'.get_field("button_copy").'</a></p>'; 
+        echo '</div>';
+        echo '</div>';
+    }else{
+        echo '<div class="overlay">';
+        echo '<div class="overlay-left">';
+        echo '<h2>'.get_the_title().'</h2>';
+        echo get_the_content();
+        echo '</div>';
+        echo '<div class="overlay-right">';
+        echo '<img src="'.get_field('slide_poster').'">';
+        echo '</div>';
+        echo '</div>';
     }
-    echo '<iframe width="100%" height="100%" src="'.$source.get_field('video_code').'/"  frameborder="0" allowfullscreen></iframe>';
-}elseif($layout == 'footer'){
-    echo '<div class="navarea">';
-    echo '<div class="copy">';
-    echo '<h2>'.get_the_title().'</h2>';
-    echo get_the_content();
-    echo '<p><a href="'.$link.'" class="button">'.get_field("button_copy").'</a></p>'; 
-    echo '</div>';
-    echo '</div>';
-}else{
-    echo '<div class="overlay">';
-    echo '<div class="overlay-left">';
-    echo '<h2>'.get_the_title().'</h2>';
-    echo get_the_content();
-    echo '</div>';
-    echo '<div class="overlay-right">';
-    echo '<img src="'.get_field('slide_poster').'">';
-    echo '</div>';
-    echo '</div>';
 }
 
 ?>
                 </div>
             <?php
+            endif;
             $i++;
         endwhile;
         
@@ -144,7 +155,8 @@ $source = 'https://www.youtube.com/embed/';
 
             $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
             $styles = 'style="background-image:url('.$url.');"';
-
+            $hide_on_homepage = get_field("hide_on_homepage");
+            if($hide_on_homepage != '1') :
             // output list item
             ?>
                 <div class="slick-item type_events" id="slide<?php echo $i; ?>" <?php echo $styles; ?>>
@@ -152,46 +164,50 @@ $source = 'https://www.youtube.com/embed/';
 $layout = get_field('layout_type');
 $link = get_field("button_link");
 $button_copy = get_field("button_copy");
-if($link == ''){
-    $link = get_field('hard_link');
-}
-if($button_copy == ''){
-    $button_copy = 'Learn More';
-}
-if($layout == 'video'){
-    $source = 'https://www.youtube.com/embed/';
-    if(get_field('video_souce') == 'Vimeo'){
-       $source = 'https://player.vimeo.com/video/'; 
+
+
+    if($link == ''){
+        $link = get_field('hard_link');
     }
-    echo '<iframe width="100%" height="100%" src="'.$source.get_field('video_code').'/"  frameborder="0" allowfullscreen></iframe>';
-}elseif($layout == 'footer'){
-    echo '<div class="navarea">';
-    echo '<div class="copy">';
-    echo '<h2>'.get_the_title().'</h2>';
-    echo get_the_content();
-    if($link != ''){
-        echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>'; 
+    if($button_copy == ''){
+        $button_copy = 'Learn More';
     }
-    echo '</div>';
-    echo '</div>';
-}else{
-    echo '<div class="overlay">';
-    echo '<div class="overlay-left">';
-    echo '<h2>'.get_the_title().'</h2>';
-    echo get_the_content();
-    if($link != ''){
-        echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>'; 
+    if($layout == 'video'){
+        $source = 'https://www.youtube.com/embed/';
+        if(get_field('video_souce') == 'Vimeo'){
+           $source = 'https://player.vimeo.com/video/'; 
+        }
+        echo '<iframe width="100%" height="100%" src="'.$source.get_field('video_code').'/"  frameborder="0" allowfullscreen></iframe>';
+    }elseif($layout == 'footer'){
+        echo '<div class="navarea">';
+        echo '<div class="copy">';
+        echo '<h2>'.get_the_title().'</h2>';
+        echo get_the_content();
+        if($link != ''){
+            echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>'; 
+        }
+        echo '</div>';
+        echo '</div>';
+    }else{
+        echo '<div class="overlay">';
+        echo '<div class="overlay-left">';
+        echo '<h2>'.get_the_title().'</h2>';
+        echo get_the_content();
+        if($link != ''){
+            echo '<p><br /><a href='.$link.' class="button">'.$button_copy.'</a></p>'; 
+        }
+        echo '</div>';
+        echo '<div class="overlay-right">';
+        echo '<img src="'.get_field('slide_poster').'">';
+        echo '</div>';
+        echo '</div>';
     }
-    echo '</div>';
-    echo '<div class="overlay-right">';
-    echo '<img src="'.get_field('slide_poster').'">';
-    echo '</div>';
-    echo '</div>';
-}
+
 
 ?>
                 </div>
             <?php
+             endif;
             $i++;
         endwhile;
 

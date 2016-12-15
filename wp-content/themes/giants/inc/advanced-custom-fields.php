@@ -509,6 +509,14 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'layout' => 'vertical',
 			),
+			array (
+				'key' => 'field_58530309da6d6',
+				'label' => 'Hide on Homepage',
+				'name' => 'hide_on_homepage',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
 		),
 		'location' => array (
 			array (
@@ -1052,7 +1060,6 @@ if(function_exists("register_field_group"))
 		'menu_order' => 99,
 	));
 }
-
 
 
 

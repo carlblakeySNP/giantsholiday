@@ -82,7 +82,7 @@ $(function() {
             autoplay: true,
             autoplaySpeed: 6000,
             speed: 600,
-            pauseOnHover: false
+            pauseOnHover: true
         });
 
         $('.home-gallery').on('afterChange', function(event, slick, currentSlide){
