@@ -259,6 +259,16 @@ function giants_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Social Menu', 'giants' ),
+		'id'            => 'social',
+		'description'   => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 	register_sidebar( array(
 		'name'          => __( 'Center Content', 'giants' ),
 		'id'            => 'center_content',

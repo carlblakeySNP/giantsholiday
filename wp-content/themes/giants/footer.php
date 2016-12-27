@@ -45,8 +45,11 @@
             <div class="container padding grid">
                 <div class="block-6">
                     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'footnav' ) ); ?>
+                    <div class="copyright"><?php dynamic_sidebar( 'social' ); ?></div>
+
                 </div>
                 <div class="block-2">
+
                     <div class="copyright"><?php dynamic_sidebar( 'footer-bottom' ); ?></div>
                 </div>
             </div>

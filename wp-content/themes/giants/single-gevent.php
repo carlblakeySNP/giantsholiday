@@ -32,6 +32,15 @@ get_header(); ?>
                     <a href="<?php the_field('link'); ?>" class="button_box" target="_blank"><?php the_field('button_text'); ?></a>
                 <?php else: ?>
                 <?php endif; ?>
+<div class="social-grid">
+    <a href="http://www.facebook.com/sharer.php?s=100&p[title]=<?php echo $currentPostTitle; ?>&p[summary]=&p[url]=<?php echo $currentPostLink; ?>&p[images][0]=<?php echo urlencode($url); ?>"
+  target="_blank" class="social-block facebook"><i class="fa fa-facebook"></i></a>
+    <a href="http://twitter.com/intent/tweet?url=<?php echo $currentPostLink; ?>;text=<?php echo $currentPostTitle; ?>#wearegiants;size=l&amp;count=none" target="_blank" class="social-block twitter"><i class="fa fa-twitter"></i></a>
+    <a href="https://plus.google.com/share?url=<?php echo $currentPostLink; ?>" target="_blank" class="social-block google"><i class="fa fa-google-plus"></i></a>
+    <a href="http://pinterest.com/pin/create/button/?url=<?php echo $currentPostLink; ?>&media=<?php echo urlencode($url); ?>&description=<?php echo $currentPostLink; ?>" target="_blank" class="social-block pinterest"><i class="fa fa-pinterest-p"></i></a>
+    <a href="mailto:?subject=<?php echo $currentPostTitle; ?>&body=<?php echo $currentPostLink; ?>" class="social-block envelope"><i class="fa fa-envelope"></i></a>
+    <a href="http://api.addthis.com/oexchange/0.8/offer?url=<?php echo $currentPostLink; ?>" target="_blank" class="social-block share"><i class="fa fa-share-alt"></i></a>
+</div>
             </div>
             <div class="block-6">
                 <?php the_content(); ?>

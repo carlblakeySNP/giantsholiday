@@ -42,7 +42,7 @@
 <script type="text/javascript" src="//use.typekit.net/czq2nci.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
 <!--gulpHeadStart edited by gulpfile.js--><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/build/css/style.min.css"><!--gulpHeadEnd-->
 
