@@ -13,7 +13,7 @@
 	color:#414041;
 }
 #content {
-	padding-top: 104px;
+	padding-top: 101px;
 }
 .about,
 .venues{
@@ -61,6 +61,25 @@ h6{font-size: 14px;}
 	overflow:hidden;
 }
 
+body{
+	&.scrolled{
+		header#masthead{
+			position: fixed;
+			nav#site-navigation {
+				ul.menu{
+					li{
+						padding:10px 7px;
+					}
+				}
+			}
+			.site-branding{
+				height:40px;
+				top: 5px;
+			}
+		}
+	}
+}
+
 header#masthead{
 
 	position:absolute;	
@@ -69,13 +88,12 @@ header#masthead{
 	left:0;
 	right:0;
 	z-index:999;
-	height:104px;
 	background: #000;
 	text-align: center;
 
     transition: box-shadow 0.2s;
     .site-branding{
-		position:fixed;
+		position:absolute;
 		top:20px;
 		left:10px;
 		height:84px;
@@ -89,27 +107,33 @@ header#masthead{
 	}
 	nav#site-navigation {
 		position:absolute;
-		top:35px;
+		top:0px;
 		right:0px;
 		left:0px;
+
 		background: #000;
-		text-align: center;
 		z-index:98;
 		ul.menu{
 			display:block;
 			list-style: none;
-			width:50%;
+			width:75%;
 			float:right;
 			margin:0;
 			text-align: center;
-			padding:10px;
+			padding:0px;
+			white-space: nowrap;
+			text-align: right;
+			font-size: 14px;
+			line-height: 22px;
 			li{
+				transition: padding 0.2s;
 				display: inline-block;
 				text-transform: uppercase;
-				margin:0 0 0 30px;
-				font-size: 15px;
+				margin:0;
+				
 				letter-spacing: 4px;
 				font-weight: 300;
+				padding:40px 7px;
 				a{
 					color:#FFF;
 					opacity:0.7;
@@ -125,13 +149,19 @@ header#masthead{
 						color:#FFF;						
 					}
 				}
+				&.button{
+					a{
+						color:@black;
+					}
+					background-color: @orange;
+				}
 			}
 		}
 		.submenu-wrap{
 			width:100%;
 			background-color: @lightgray;
 			padding:10px 0;
-			margin:65px 0 0 0;
+			margin:102px 0 0 0;
 			ul.submenu{
 				display:block;
 				width:100%;
@@ -642,7 +672,7 @@ header#masthead{
 		}
 	}
 	.stuck{
-		position:fixed;
+		position:absolute;
 		bottom:0px;
 		width:100%;
 		.slide-nav{
@@ -1748,21 +1778,6 @@ footer {
 			margin:10px;
 		}
 	}
-	#page {
-		&.open{
-			header#masthead {
-				nav#site-navigation {
-					top:44px;
-					.submenu-wrap{
-						opacity:1;
-					}
-				}
-			}
-			#content{
-				padding-top: 200px;
-			}
-		}
-	}
 	#content{
 		padding-top: 44px;
 		transition: padding 0.2s;
@@ -1773,78 +1788,7 @@ footer {
 			padding-top: 44px;
 		}
 	}
-	header#masthead {
-		position:fixed;
-		height:44px;
-	    .site-branding{
-			position:fixed;
-			top:0;
-			left:0;
-			right:0;
-			height:44px;
-			padding:2px;
-			z-index:98;
-			img{
-				height:100%;
-				padding:5px;
-			}
-			background-color:#000;
-
-		}
-		.hamburger{
-			position:fixed;
-			z-index: 99;
-			top:0px;
-			right:0px;
-			margin-top:5px;
-			margin-right:10px;
-			display:block;
-			width:32px;
-			height:32px;
-			background: url('../img/hamburger.svg');
-			background-color:#000;
-
-		}
-		nav#site-navigation {
-			position:fixed;
-			z-index: 80;
-			top:-110px;
-			transition: top 0.2s;
-			.submenu-wrap{
-				margin:0;
-				padding:0;
-				opacity:0;
-				transition: opacity 0.2s;
-				ul.submenu {
-					margin:0px;
-					position:absolute;
-					bottom:-50px;
-					height:50px;
-					z-index: 80;
-					text-align: center;
-					li{
-						margin: 0 10px;
-						font-size: 12px;
-						&:before{
-							margin:0px;
-							display:none;
-						}
-					}
-				}
-			}
-
-			ul.menu{
-				float:right;
-				text-align: right;
-				line-height: 28px;
-				li{
-					display:block;
-				}
-				//display:none;
-			}
-
-		}
-	}
+	
 	.rate-table {
 		table td, .rate-table table th{
 			font-size: 12px;
@@ -2263,8 +2207,6 @@ footer{
 @media only screen and (min-width : 1024px) {
 
 
-
-
 	.touch-slider{
 		.slick-item{
 			height: 500px;
@@ -2299,23 +2241,129 @@ footer{
 	}
 }
 @media only screen and (max-width : 1024px) {
-
-
-	header#masthead {
-		nav#site-navigation {
-			ul.menu{
-				li{
-					font-size: 12px;
-					margin: 0 0 0 10px;
-
+	#page {
+		&.open{
+			header#masthead {
+				nav#site-navigation {
+					top:44px;
+					.submenu-wrap{
+						opacity:1;
+					}
 				}
+			}
+			#content{
+				padding-top: 240px;
+			}
+		}
+	}
+	.about #content, .venues #content,
+	#content{
+		padding-top: 44px;
+		transition: padding 0.2s;
+	}
+	header#masthead {
+		position:fixed;
+		height:44px;
+	    .site-branding{
+			position:fixed;
+			top:0 !important;
+			left:0;
+			right:0;
+			height:44px !important;
+			padding:2px;
+			z-index:98;
+			img{
+				height:100%;
+				padding:5px;
+			}
+			background-color:#000;
+
+		}
+		.hamburger{
+			position:fixed;
+			z-index: 99;
+			top:0px;
+			right:0px;
+			margin-top:5px;
+			margin-right:10px;
+			display:block;
+			width:32px;
+			height:32px;
+			background: url('../img/hamburger.svg');
+			background-color:#000;
+
+		}
+		nav#site-navigation {
+			position:fixed;
+			z-index: 80;
+			top:-160px;
+			transition: top 0.2s;
+			.submenu-wrap{
+
+				margin:0;
+				padding:0;
+				opacity:0;
+				transition: opacity 0.2s;
+				ul.submenu {
+					margin:0px;
+					position:absolute;
+					bottom:-44px;
+					height:44px;
+					z-index: 80;
+					text-align: center;
+					li{
+						margin: 12px 4px;
+						font-size: 12px;
+						&:before{
+							margin:0px;
+							display:none;
+						}
+					}
+				}
+			}
+
+			ul.menu{
+				width:auto;
+				float:right;
+				text-align: right;
+				line-height: 28px;
+				li{
+					display:block;
+					padding:0 7px !important;
+				}
+				//display:none;
 			}
 
 		}
 	}
 }
 
+@media only screen and (max-width : 1400px) {
+	body{
+		&.scrolled{
+			header#masthead {
+				.site-branding{
+
+				}
+			}
+		}
+	}
+	header#masthead {
+		.site-branding{
+			top:28px;
+			height:60px;
+
+		}
+		nav#site-navigation {
+			ul.menu{
+				font-size: 10px;
+			}
+		}
+	}
+}
+
 @media only screen and (min-width : 1400px) {
+
 	.touch-slider{
 		.slick-item{
 			height: 600px;

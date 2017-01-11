@@ -174,38 +174,40 @@ $(document).ready(UTIL.loadEvents);
         var sp = parseInt($(window).scrollTop(), 0);
         var w = $(window).width();
         if(w > 768){
-            if(sp > 45){
-                $('#site-navigation').css({
-                    position: 'fixed',
-                    top: 0
-                });
-                $('.submenu-wrap').css({
-                    marginTop: '44px'
-                });
-                $('.site-branding').css({
-                    height: '40px'
-                });
-            }else{
-                $('#site-navigation').css({
-                    position: 'absolute',
-                    top: 35
-                }); 
-                $('.submenu-wrap').css({
-                    marginTop: '65px'
-                });
-                $('.site-branding').css({
-                    height: '84px'
-                });
-            }
             if(sp > 0){
-                $('.site-branding').css({
-                    top: 5
-                });
+                $('body').addClass('scrolled');
+                // $('#site-navigation').css({
+                //     position: 'fixed',
+                //     top: 0
+                // });
+                // $('.submenu-wrap').css({
+                //     marginTop: '44px'
+                // });
+                // $('.site-branding').css({
+                //     height: '40px'
+                // });
             }else{
-                $('.site-branding').css({
-                    top: 20
-                });
+                $('body').removeClass('scrolled');
+                // $('#site-navigation').css({
+                //     position: 'absolute',
+                //     top: 0
+                // }); 
+                // $('.submenu-wrap').css({
+                //     marginTop: '65px'
+                // });
+                // $('.site-branding').css({
+                //     height: '84px'
+                // });
             }
+            // if(sp > 0){
+            //     $('.site-branding').css({
+            //         top: 5
+            //     });
+            // }else{
+            //     $('.site-branding').css({
+            //         top: 20
+            //     });
+            // }
         }
 
     }

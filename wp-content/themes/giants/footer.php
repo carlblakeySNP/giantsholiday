@@ -128,22 +128,22 @@ $(function() {
             $('.inside-slider li').width(w);
             //sl.find('.inside-slider li').height(h);
             
-            if(h >= t){
-                $('.stuck').css('position','absolute'); 
-            }else{
-                $('.stuck').css('position','fixed');  
-            }
-            if(sp > 112){
-                $('header').css({
-                    position: 'fixed',
-                    top: -112
-                });
-            }else{
-                $('header').css({
-                    position: 'absolute',
-                    top: 0
-                }); 
-            }
+            // if(h >= t){
+            //     $('.stuck').css('position','absolute'); 
+            // }else{
+            //     $('.stuck').css('position','fixed');  
+            // }
+            // if(sp > 112){
+            //     $('header').css({
+            //         position: 'fixed',
+            //         top: -112
+            //     });
+            // }else{
+            //     $('header').css({
+            //         position: 'absolute',
+            //         top: 0
+            //     }); 
+            // }
         }
 
 
