@@ -128,22 +128,22 @@ $(function() {
             $('.inside-slider li').width(w);
             //sl.find('.inside-slider li').height(h);
             
-            // if(h >= t){
-            //     $('.stuck').css('position','absolute'); 
-            // }else{
-            //     $('.stuck').css('position','fixed');  
-            // }
-            // if(sp > 112){
-            //     $('header').css({
-            //         position: 'fixed',
-            //         top: -112
-            //     });
-            // }else{
-            //     $('header').css({
-            //         position: 'absolute',
-            //         top: 0
-            //     }); 
-            // }
+            if(h >= t){
+                $('.stuck').css('position','absolute'); 
+            }else{
+                $('.stuck').css('position','fixed');  
+            }
+            if(sp > 112){
+                $('header').css({
+                    position: 'fixed',
+                    top: -112
+                });
+            }else{
+                $('header').css({
+                    position: 'absolute',
+                    top: 0
+                }); 
+            }
         }
 
 
@@ -165,7 +165,27 @@ $(function() {
 </script>
 <?php endif; ?>
 <script>
+$(document).ready(function(){
+    is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+    is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+    is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+    is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    is_opera = navigator.userAgent.indexOf("Presto") > -1;
+    is_mac = (navigator.userAgent.indexOf('Mac OS') != -1);
+    is_windows = !is_mac;
+
+    if (is_chrome && is_safari){
+      is_safari=false;
+    }
+
+    if (is_safari || is_windows){
+      $('#masthead').css('-webkit-text-stroke', '0.5px');
+    }
+
+
+  });
 $(function() {
+
 
     $('.hamburger').on('click', function(){
         console.log('clicked');
