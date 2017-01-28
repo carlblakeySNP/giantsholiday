@@ -23,7 +23,7 @@
 <?php endif; ?>
         <div class="directions">
             <div class="container pad">
-                <h1 class="entry-title notop">Directions <br />To AT&T Park</h1>
+                <h1 class="entry-title notop">Directions To AT&T Park</h1>
                 <p>Enter your starting address:</p>
                 <form action="http://maps.google.com/maps" method="get" target="_blank">
                 <input type="hidden" name="daddr" value="324 Willie Mays Plaza San Francisco, CA 94107 (AT&amp;T Park)" />

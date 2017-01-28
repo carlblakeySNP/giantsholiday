@@ -252,6 +252,13 @@ if(function_exists("register_field_group"))
 					'order_no' => 0,
 					'group_no' => 0,
 				),
+				array (
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'template-yacht.php',
+					'order_no' => 1,
+					'group_no' => 0,
+				),
 			),
 		),
 		'options' => array (
@@ -893,6 +900,13 @@ if(function_exists("register_field_group"))
 					'order_no' => 0,
 					'group_no' => 0,
 				),
+				array (
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'template-yacht.php',
+					'order_no' => 1,
+					'group_no' => 0,
+				),
 			),
 		),
 		'options' => array (
@@ -1028,6 +1042,287 @@ if(function_exists("register_field_group"))
 		'menu_order' => 10,
 	));
 	register_field_group(array (
+		'id' => 'acf_content-boxes',
+		'title' => 'Content Boxes',
+		'fields' => array (
+			array (
+				'key' => 'field_588ba6b7691da',
+				'label' => 'Boxes',
+				'name' => 'boxes',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_588ba6c3691db',
+						'label' => 'Box Title',
+						'name' => 'box_title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_588ba6cf691dc',
+						'label' => 'Box Copy',
+						'name' => 'box_copy',
+						'type' => 'wp_wysiwyg',
+						'column_width' => '',
+						'default_value' => '',
+						'teeny' => 0,
+						'media_buttons' => 1,
+						'dfw' => 1,
+					),
+					array (
+						'key' => 'field_588ba6e0691dd',
+						'label' => 'Box Link',
+						'name' => 'box_link',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_588ba6ec691de',
+						'label' => 'Box Image',
+						'name' => 'box_image',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 11,
+	));
+	register_field_group(array (
+		'id' => 'acf_large-feature-with-text-box',
+		'title' => 'Large Feature with Text Box',
+		'fields' => array (
+			array (
+				'key' => 'field_588bbaeef0fd7',
+				'label' => 'Title',
+				'name' => 'title',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_588bbb15f0fd8',
+				'label' => 'Copy',
+				'name' => 'copy',
+				'type' => 'wp_wysiwyg',
+				'default_value' => '',
+				'teeny' => 0,
+				'media_buttons' => 1,
+				'dfw' => 1,
+			),
+			array (
+				'key' => 'field_588bbb20f0fd9',
+				'label' => 'Image',
+				'name' => 'image',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 12,
+	));
+	register_field_group(array (
+		'id' => 'acf_block-repeater',
+		'title' => 'Block Repeater',
+		'fields' => array (
+			array (
+				'key' => 'field_588bd0cc34b9e',
+				'label' => 'Blocks',
+				'name' => 'blocks',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_588bd0d834b9f',
+						'label' => 'Title',
+						'name' => 'title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_588bd0e334ba0',
+						'label' => 'Copy',
+						'name' => 'copy',
+						'type' => 'textarea',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => '',
+						'formatting' => 'br',
+					),
+					array (
+						'key' => 'field_588bd0ed34ba1',
+						'label' => 'Image',
+						'name' => 'image',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 13,
+	));
+	register_field_group(array (
+		'id' => 'acf_multiple-galleries',
+		'title' => 'Multiple Galleries',
+		'fields' => array (
+			array (
+				'key' => 'field_588be542f6395',
+				'label' => 'Multiple Galleries',
+				'name' => 'multiple_galleries',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_588be5cab465c',
+						'label' => 'Title',
+						'name' => 'title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_588be54ef6396',
+						'label' => 'New Gallery',
+						'name' => 'new_gallery',
+						'type' => 'repeater',
+						'column_width' => '',
+						'sub_fields' => array (
+							array (
+								'key' => 'field_588be563f6397',
+								'label' => 'Image',
+								'name' => 'image',
+								'type' => 'image',
+								'column_width' => '',
+								'save_format' => 'object',
+								'preview_size' => 'thumbnail',
+								'library' => 'all',
+							),
+						),
+						'row_min' => '',
+						'row_limit' => '',
+						'layout' => 'table',
+						'button_label' => 'Add Row',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 15,
+	));
+	register_field_group(array (
 		'id' => 'acf_footer-widget',
 		'title' => 'Footer Widget',
 		'fields' => array (
@@ -1060,6 +1355,7 @@ if(function_exists("register_field_group"))
 		'menu_order' => 99,
 	));
 }
+
 
 
 
