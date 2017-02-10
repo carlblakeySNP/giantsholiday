@@ -56,6 +56,9 @@
         </div>  
     </footer>
 </div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
+
 <script>
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmRhdmlzIiwiYSI6ImNpdThybXg1cTAwNnIyb3RxOGt5amF2bzIifQ.dIR470x1E_JrDsP7jjjmjw';

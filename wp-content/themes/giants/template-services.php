@@ -27,7 +27,7 @@ get_header();
             echo '<div class="slick-gallery">';
             while ( have_rows('page_gallery') ) : the_row();
                 // display a sub field value
-                echo '<div class="slick-item" style="background-image:url('.get_sub_field('page_gallery_image').');">';
+                echo '<div class="slick-item" style="background-image:url('.get_sub_field('page_gallery_image')['sizes']['slideshow'].');">';
 
                 if(get_sub_field('page_gallery_video_code') != ''){
 

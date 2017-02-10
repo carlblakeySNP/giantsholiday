@@ -71,7 +71,7 @@ get_header(); ?>
             echo '<div class="slick">';
             while ( have_rows('page_gallery') ) : the_row();
                 // display a sub field value
-                echo '<div class="slick-slide" style="background-image:url('.get_sub_field('page_gallery_image').');"></div>';
+                echo '<div class="slick-slide" style="background-image:url('.get_sub_field('page_gallery_image')['sizes']['slideshow'].');"></div>';
             endwhile;
             echo '</div>';
         else :

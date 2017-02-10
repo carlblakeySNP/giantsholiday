@@ -22,7 +22,7 @@ get_header();
         $i = 0;
         while ($loop->have_posts()) : $loop->the_post();
 
-            $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
+            $url = get_the_post_thumbnail_url($loop->post, 'slideshow');
             $styles = 'style="background-image:url('.$url.');"';
             $hide_on_homepage = get_field("hide_on_homepage");
             if($hide_on_homepage == '') :
