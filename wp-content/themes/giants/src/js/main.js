@@ -263,7 +263,7 @@ $(document).ready(UTIL.loadEvents);
     $('a[href*=#]:not([href=#])').click(function() {
         console.log('this.hash.slice(1)');
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            $('#submenu li').removeClass('current_page_item');
+            $('.submenu li').removeClass('current_page_item');
             $(this).parent().addClass('current_page_item');
             var target = $(this.hash);
             var topoffset = 1000;

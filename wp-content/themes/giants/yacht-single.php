@@ -41,65 +41,101 @@
         endif;
     ?>
 	</div><!-- .entry-header -->
-    <div id="about"></div>
-	<div id="venues" class="container">
-		<div class="grid">
-				<?php the_title( sprintf( '<h1 class="entry-title notop"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		
-			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'giants' ) ); ?>
-			</div><!-- .entry-content -->
+    <div class="container">
+        <div class="grid">
+            <div class="block-6">
+                <h1 class="entry-title notop">
+                    <?php the_title(); ?>
+                </h1><!-- .entry-header -->
+                <?php the_content(); ?>
+            </div>
+            <div class="block-2">
+                <ul class="venue-details">
+                    <?php if(get_field('dimentions')) : ?>
+                        <li class="details-title">Dimensions</li>
+                        <li><?php the_field('dimentions'); ?></li>
+                    <?php endif; ?>
+                    <?php if(get_field('seated')) : ?>
+                        <li class="details-title">Seated</li>
+                        <li><?php the_field('seated'); ?></li>
+                    <?php endif; ?>
+                    <?php if(get_field('reception')) : ?>
+                        <li class="details-title">Reception</li>
+                        <li><?php the_field('reception'); ?></li>
+                    <?php endif; ?>
+                    <?php if(get_field('rate')) : ?>
+                        <li class="details-title">Rate</li>
+                        <li><?php the_field('rate'); ?></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php 
+$plan_view = get_field('plan_view');
+$elevation_view = get_field('elevation_view');
+$floor_plan = get_field('floor_plan');
+$floor_plan_pdf = get_field('floor_plan_pdf');
 
-		</div>
+?>
+<?php 
+if($plan_view['url'] != '') :
+    $num1 = 'block-full';
+    if($elevation_view['url'] != '') {
+        $num1 = 'block-2';
+        $num2 = 'block-6';
+    }
+?>
+<article class="plans">
+    <div class="container">
+        <div class="grid">
+            <div class="<?php echo $num1; ?>">
+                <div class="content">
+                    <h3>Plan View</h3>
+                    <a href="<?php echo $plan_view['url']; ?>" target="_blank"><img src="<?php echo $plan_view['url']; ?>" /></a>
+                </div>
+            </div>
+            <?php if($elevation_view['url'] != '') : ?>
+            <div class="<?php echo $num2; ?>">
+                <div class="content">
+                    <h3>Elevation View</h3>
+                    <a href="<?php echo $elevation_view['url']; ?>" target="_blank"><img src="<?php echo $elevation_view['url']; ?>" /></a>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+        <?php if($floor_plan['url'] != '') : ?>
+        <div class="content">
+            <h3>Floor Plan</h3>
+            <a href="<?php echo $floor_plan_pdf; ?>" target="_blank">
+                <img src="<?php echo $floor_plan['url']; ?>" />
+            </a>
+        </div>
+    <?php endif; ?>
+    </div>
+</article>
+<?php endif; ?>
 
-	</div>
-    <div id="yacht"></div>
     <?php if( have_rows('boxes') ): ?>
         <div class="container pad boxes">
             <?php while ( have_rows('boxes') ) : the_row(); ?>
-
-                <?php if(!get_sub_field('choose_content_type')) : ?>
-
-                    <?php 
-                        $img = get_sub_field('box_image');
-                    ?>
-                    <div class="grid video-play">
-                        <div class="block-2">
-                            <a href="/">
-                                <h3><?php the_sub_field('box_title'); ?></h3>
-                            </a>
-                                <p><?php the_sub_field('box_copy'); ?></p>
-                                <p><a href="<?php the_sub_field('box_link'); ?>">Read More</a></p>
-                            
-                        </div>
-                        <div class="block-6" style="height:200px;background-image: url(<?php echo $img['sizes']['large']; ?>);">
-                            
-                        </div>
+                <?php 
+                    $img = get_sub_field('box_image');
+                ?>
+                <div class="grid video-play">
+                    <div class="block-2">
+                        <a href="/">
+                            <h3><?php the_sub_field('box_title'); ?></h3>
+                            <p><?php the_sub_field('box_copy'); ?></p>
+                            <p><a href="<?php the_sub_field('box_link'); ?>">Read More</a></p>
+                        </a>
                     </div>
-               
-                <?php else: ?>
-                    <div class="grid video-play">
-                        <?php 
-                            $post_type = get_sub_field('post_type'); 
-                            $img = wp_get_attachment_image_src( get_post_thumbnail_id($post_type->ID), 'large');
-                        ?>
-
-                        <div class="block-2">
-                            
-                                <a href="<?php echo get_permalink($post_type->ID); ?>"><h3><?php echo $post_type->post_title; ?></h3></a>
-                                <p><?php echo $post_type->post_content; ?></p>
-                                <p><a href="<?php echo get_permalink($post_type->ID); ?>">Read More</a></p>
-                            
-                        </div>
-                        <div class="block-6" style="height:200px;background-image: url(<?php echo $img[0]; ?>);">
-                            
-                        </div>
+                    <div class="block-6" style="height:200px;background-image: url(<?php echo $img['sizes']['large']; ?>);">
+                        
                     </div>
-                    
-                <?php endif; ?>
-            <?php endwhile; ?>
+                </div>
+             <?php endwhile; ?>
         </div>
-
     <?php endif; ?>
 
     <?php 
@@ -107,7 +143,6 @@
         $copy = get_field('copy');
         $image = get_field('image');
     ?>
-    <div id="experience"></div>
     <?php if($title) : ?>
         <div class="large-feature" style="background-image: url(<?php echo $image['sizes']['large']; ?>);">
             <div class="container">
@@ -121,7 +156,7 @@
 
     </div>
 
-<div id="events"></div>
+
     <?php if( have_rows('blocks') ): ?>
         <div class="addons">
             <div class="container">

@@ -79,15 +79,16 @@
 				</ul>
 			</div>
 			<?php endif; ?>
-<!-- 			<?php if(is_page('about')) : ?>
+			<?php if(is_page_template( 'template-yacht.php' )) : ?>
 			<div class="submenu-wrap">
 				<ul class="submenu container">
-					<li><a href="#about">about giants enterprises</a></li>
-					<li><a href="#park">about at&t park</a></li>
-					<li><a href="#directions">directions</a></li>
+					<li><a href="#about">About Bay Yachting</a></li>
+					<li><a href="#yacht">The Yachts</a></li>
+					<li><a href="#experience">The Experience</a></li>
+					<li><a href="#events">Private Events</a></li>
 				</ul>
 			</div>
-			<?php endif; ?> -->
+			<?php endif; ?>
 		</nav><!-- #site-navigation -->
 	</header>
 

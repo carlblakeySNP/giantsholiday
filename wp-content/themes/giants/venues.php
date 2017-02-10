@@ -106,10 +106,17 @@
                     $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
                     $styles = 'style="background-image:url('.$url.');"';
                     // output list item
+                    $title = get_the_title();
+                    if($title == 'Bay Yachts'){
+                        $title = '<a href="/bay-yachting/"><h2>'.$title.'</h2></a>';
+                    }else{
+                        $title = '<a href="'.get_the_permalink().'"><h2>'.$title.'</h2></a>';
+                    }
                     ?>
 
                     <div class="content-item grid">
-                    	<div class="block-2 item-text"><a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+                    	<div class="block-2 item-text">
+                            <?php echo $title; ?>
                     		<ul>
 		                    	<?php
 		                    		foreach ($venues as $venue) {
