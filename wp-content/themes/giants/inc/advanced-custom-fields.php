@@ -841,6 +841,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 0,
 				),
 			),
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht-single.php',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
 		),
 		'options' => array (
 			'position' => 'normal',
@@ -1052,10 +1061,30 @@ if(function_exists("register_field_group"))
 				'type' => 'repeater',
 				'sub_fields' => array (
 					array (
+						'key' => 'field_589bb81d0192f',
+						'label' => 'Choose Post Type',
+						'name' => 'choose_content_type',
+						'type' => 'true_false',
+						'column_width' => '',
+						'message' => '',
+						'default_value' => 0,
+					),
+					array (
 						'key' => 'field_588ba6c3691db',
 						'label' => 'Box Title',
 						'name' => 'box_title',
 						'type' => 'text',
+						'conditional_logic' => array (
+							'status' => 1,
+							'rules' => array (
+								array (
+									'field' => 'field_589bb81d0192f',
+									'operator' => '!=',
+									'value' => '1',
+								),
+							),
+							'allorany' => 'all',
+						),
 						'column_width' => '',
 						'default_value' => '',
 						'placeholder' => '',
@@ -1069,6 +1098,17 @@ if(function_exists("register_field_group"))
 						'label' => 'Box Copy',
 						'name' => 'box_copy',
 						'type' => 'wp_wysiwyg',
+						'conditional_logic' => array (
+							'status' => 1,
+							'rules' => array (
+								array (
+									'field' => 'field_589bb81d0192f',
+									'operator' => '!=',
+									'value' => '1',
+								),
+							),
+							'allorany' => 'all',
+						),
 						'column_width' => '',
 						'default_value' => '',
 						'teeny' => 0,
@@ -1080,6 +1120,17 @@ if(function_exists("register_field_group"))
 						'label' => 'Box Link',
 						'name' => 'box_link',
 						'type' => 'text',
+						'conditional_logic' => array (
+							'status' => 1,
+							'rules' => array (
+								array (
+									'field' => 'field_589bb81d0192f',
+									'operator' => '!=',
+									'value' => '1',
+								),
+							),
+							'allorany' => 'all',
+						),
 						'column_width' => '',
 						'default_value' => '',
 						'placeholder' => '',
@@ -1093,10 +1144,49 @@ if(function_exists("register_field_group"))
 						'label' => 'Box Image',
 						'name' => 'box_image',
 						'type' => 'image',
+						'conditional_logic' => array (
+							'status' => 1,
+							'rules' => array (
+								array (
+									'field' => 'field_589bb81d0192f',
+									'operator' => '!=',
+									'value' => '1',
+								),
+							),
+							'allorany' => 'all',
+						),
 						'column_width' => '',
 						'save_format' => 'object',
 						'preview_size' => 'thumbnail',
 						'library' => 'all',
+					),
+					array (
+						'key' => 'field_589bb84d01930',
+						'label' => 'Post Type',
+						'name' => 'post_type',
+						'type' => 'post_object',
+						'conditional_logic' => array (
+							'status' => 1,
+							'rules' => array (
+								array (
+									'field' => 'field_589bb81d0192f',
+									'operator' => '==',
+									'value' => '1',
+								),
+							),
+							'allorany' => 'all',
+						),
+						'column_width' => '',
+						'post_type' => array (
+							0 => 'venue',
+							1 => 'gevent',
+							2 => 'service',
+						),
+						'taxonomy' => array (
+							0 => 'all',
+						),
+						'allow_null' => 0,
+						'multiple' => 0,
 					),
 				),
 				'row_min' => '',
