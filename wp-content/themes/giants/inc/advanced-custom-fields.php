@@ -931,7 +931,7 @@ if(function_exists("register_field_group"))
 						'name' => 'page_gallery_image',
 						'type' => 'image',
 						'column_width' => '',
-						'save_format' => 'url',
+						'save_format' => 'object',
 						'preview_size' => 'thumbnail',
 						'library' => 'all',
 					),
