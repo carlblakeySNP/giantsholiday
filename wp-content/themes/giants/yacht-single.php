@@ -138,6 +138,7 @@ if($plan_view['url'] != '') :
         </div>
     <?php endif; ?>
 
+
     <?php 
         $title = get_field('title'); 
         $copy = get_field('copy');
