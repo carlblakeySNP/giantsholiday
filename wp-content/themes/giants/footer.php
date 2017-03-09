@@ -156,11 +156,7 @@ $(function() {
         $(window).resize( function(e){
             scrollHP();
         });
-        $(window).load( function(e){
-            scrollHP();
-            $('#HomeSlider').addClass('on');
-
-        });
+        scrollHP();
 
 });
 

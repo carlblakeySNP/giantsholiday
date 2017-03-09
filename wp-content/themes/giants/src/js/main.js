@@ -167,7 +167,7 @@ var UTIL = {
   }
 };
 
-$(document).ready(UTIL.loadEvents);
+UTIL.loadEvents();
 
 (function(){
     function scrollAll(){
@@ -278,8 +278,3 @@ $(document).ready(UTIL.loadEvents);
     });
 
 })(jQuery);
-
-
-
-
-
