@@ -581,6 +581,76 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_text-and-image-slideshow',
+		'title' => 'Text and Image Slideshow',
+		'fields' => array (
+			array (
+				'key' => 'field_58a223ac7172d',
+				'label' => 'Text Slideshow',
+				'name' => 'text_slideshow',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_58a223b77172e',
+						'label' => 'Title',
+						'name' => 'title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_58a223d47172f',
+						'label' => 'Copy',
+						'name' => 'copy',
+						'type' => 'wp_wysiwyg',
+						'column_width' => '',
+						'default_value' => '',
+						'teeny' => 0,
+						'media_buttons' => 1,
+						'dfw' => 1,
+					),
+					array (
+						'key' => 'field_58a223dc71730',
+						'label' => 'Image',
+						'name' => 'image',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-yacht.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
 		'id' => 'acf_timeline',
 		'title' => 'Timeline',
 		'fields' => array (

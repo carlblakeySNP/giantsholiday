@@ -102,6 +102,30 @@
 
     <?php endif; ?>
 
+
+
+
+    <?php if( have_rows('text_slideshow') ): ?>
+        <div id="text-slideshow">
+            <?php while ( have_rows('text_slideshow') ) : the_row(); ?>
+            <?php 
+                $title = get_sub_field('title'); 
+                $copy = get_sub_field('copy');
+                $image = get_sub_field('image');
+            ?>
+
+        <div class="large-feature" style="background-image: url(<?php echo $image['sizes']['large']; ?>);">
+            <div class="container">
+                <div class="box">
+                    <h3><?php echo $title; ?></h3>
+                    <?php echo $copy; ?>
+                </div>
+            </div>
+        </div>
+        <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+
     <?php 
         $title = get_field('title'); 
         $copy = get_field('copy');
@@ -202,5 +226,16 @@
 
             });
         });
+        $('#text-slideshow').slick({
+            dots:true,
+            arrows:false
+        });
+        var max = -1;
+        $("#text-slideshow .large-feature").each(function() {
+            var h = $(this).height(); 
+            max = h > max ? h : max;
+        });
+        $("#text-slideshow .large-feature").height(max+'px')
+
     })(jQuery)
 </script>
