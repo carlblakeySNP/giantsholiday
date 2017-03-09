@@ -103,7 +103,7 @@
                 	$venues = get_pages($args);
                 	$logo = get_field('venue_logo');
 
-                    $url = wp_get_attachment_url( get_post_thumbnail_id($loop->post->ID) );
+                    $url = get_the_post_thumbnail_url($loop->post, '6-column');
                     $styles = 'style="background-image:url('.$url.');"';
                     // output list item
                     ?>
@@ -313,10 +313,6 @@
             </div>
         </div>
     </div>
-    <div class="slick-header" id="local-attractions"><div class="container"><h3>Local Attractions</h3></div></div>
-	<div id="slick-wrap">
-		<?php echo do_shortcode('[slick group="attractions"]'); ?>
-	</div>
 </article><!-- #post-## -->
 <!-- Modal -->
 <div class="modal" id="modal">
