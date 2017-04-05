@@ -1,10 +1,5 @@
-
-var GiantsSite = {
-  // All pages
-  page: {
-    init: function() {
-      // JS here
-        $('scrollHP').slick({
+(function($){
+$('scrollHP').slick({
             dots: true,
             arrows: false,
             autoplay: true,
@@ -63,24 +58,10 @@ var GiantsSite = {
             return false;
         });
 
-    },
-    finalize: function() { }
-  },
-  gallery: {
-
-    init:function(){
 
 
 
-
-    },
-    finalize: function() { }
-  },
-
-    single: {
-        init: function() {
-        // JS here
-            $('.slick').slick({
+$('.slick').slick({
                 slidesToShow: 2,
                 arrows: true,
                 pauseOnHover: false,
@@ -141,75 +122,22 @@ var GiantsSite = {
                 slick_scroll();
                 $('.slick-gallery').addClass('on');
             });
-        },
-        finalize: function() { }
-    }
-}
 
 
 
-var UTIL = {
-  fire: function(func, funcname, args) {
-    var namespace = GiantsSite;
-    funcname = (funcname === undefined) ? 'init' : funcname;
-    if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
-      namespace[func][funcname](args);
-    }
-  },
-  loadEvents: function() {
 
-    UTIL.fire('common');
-
-    $.each(document.body.className.replace(/-/g, '_').split(/\s+/),function(i,classnm) {
-      UTIL.fire(classnm);
-    });
-    UTIL.fire('common', 'finalize');
-  }
-};
-
-$(document).ready(UTIL.loadEvents);
-
-(function(){
     function scrollAll(){
         var sp = parseInt($(window).scrollTop(), 0);
         var w = $(window).width();
         if(w > 768){
             if(sp > 0){
                 $('body').addClass('scrolled');
-                // $('#site-navigation').css({
-                //     position: 'fixed',
-                //     top: 0
-                // });
-                // $('.submenu-wrap').css({
-                //     marginTop: '44px'
-                // });
-                // $('.site-branding').css({
-                //     height: '40px'
-                // });
+
             }else{
                 $('body').removeClass('scrolled');
-                // $('#site-navigation').css({
-                //     position: 'absolute',
-                //     top: 0
-                // }); 
-                // $('.submenu-wrap').css({
-                //     marginTop: '65px'
-                // });
-                // $('.site-branding').css({
-                //     height: '84px'
-                // });
-            }
-            // if(sp > 0){
-            //     $('.site-branding').css({
-            //         top: 5
-            //     });
-            // }else{
-            //     $('.site-branding').css({
-            //         top: 20
-            //     });
-            // }
-        }
 
+            }
+        }
     }
 
 
@@ -256,6 +184,7 @@ $(document).ready(UTIL.loadEvents);
     $(window).load( function(e){
         scrollAll();
         scrolling();
+        $('#HomeSlider').fadeIn();
         
     });
             
@@ -278,8 +207,3 @@ $(document).ready(UTIL.loadEvents);
     });
 
 })(jQuery);
-
-
-
-
-

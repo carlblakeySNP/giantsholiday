@@ -42,7 +42,7 @@ if($host == "giantsent.wpengine.com" or $host == "giantsenterprises.com" or $hos
 	include_once locate_template('/inc/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' );
 	include_once locate_template('/inc/acf-repeater/acf-repeater.php' );
 	include_once locate_template('/inc/advanced-custom-fields.php' );
-	$devmode = false;
+	$devmode = true;
 }else{
 	$devmode = true;
 }

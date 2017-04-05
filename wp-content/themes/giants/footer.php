@@ -31,6 +31,7 @@
                     <div class="block-6"><input type="text" name="saddr" /></div>
                     <div class="block-2"><input type="submit" value="Get Directions" /></div>
                 </div>
+                </form>
             </div>
         </div>
         <div class="footer-top" id="map">
@@ -42,14 +43,16 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container padding grid">
-                <div class="block-6">
+            <div class="container padding ">
+                <div>
                     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'footnav' ) ); ?>
                     <div class="copyright"><?php dynamic_sidebar( 'social' ); ?></div>
+                    <br />
 
-                </div>
-                <div class="block-2">
+                    <?php echo  do_shortcode('[contact-form-7 id="1200" title="Newsletter Email"]'); ?>
 
+
+                    <br /><br />
                     <div class="copyright"><?php dynamic_sidebar( 'footer-bottom' ); ?></div>
                 </div>
             </div>
@@ -57,30 +60,30 @@
     </footer>
 </div>
 
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
 
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/build/js/main.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoicmRhdmlzIiwiYSI6ImNpdThybXg1cTAwNnIyb3RxOGt5amF2bzIifQ.dIR470x1E_JrDsP7jjjmjw';
-var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/rdavis/ciu8udbxb001p2ilftmbfm2pn', //stylesheet location
-    center: [-122.3895,37.7785], // starting position
-    zoom: 16 // starting zoom
-});
-map.scrollZoom.disable();
-map.addControl(new mapboxgl.Navigation());
-$(function() {
-    setTimeout($('.mapboxgl-canvas').css({left:0,right:0,bottom:0,top:0}), 2000);
-});
+    mapboxgl.accessToken = 'pk.eyJ1IjoicmRhdmlzIiwiYSI6ImNpdThybXg1cTAwNnIyb3RxOGt5amF2bzIifQ.dIR470x1E_JrDsP7jjjmjw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/rdavis/ciu8udbxb001p2ilftmbfm2pn', //stylesheet location
+        center: [-122.3895,37.7785], // starting position
+        zoom: 16 // starting zoom
+    });
+    map.scrollZoom.disable();
+    map.addControl(new mapboxgl.Navigation());
+    (function($) {
+        setTimeout($('.mapboxgl-canvas').css({left:0,right:0,bottom:0,top:0}), 2000);
+    })(jQuery);
 </script>
 <?php
 if(is_front_page()) :
 ?>
-
 <script>
 
-$(function() {
+(function($) {
 
     $('.home-gallery').slick({
             dots: true,
@@ -129,24 +132,6 @@ $(function() {
             var t = so.top + wh - sp + 155;
             $('.bottomslides li').width(w);
             $('.inside-slider li').width(w);
-            //sl.find('.inside-slider li').height(h);
-            
-            // if(h >= t){
-            //     $('.stuck').css('position','absolute'); 
-            // }else{
-            //     $('.stuck').css('position','fixed');  
-            // }
-            // if(sp > 112){
-            //     $('header').css({
-            //         position: 'fixed',
-            //         top: -112
-            //     });
-            // }else{
-            //     $('header').css({
-            //         position: 'absolute',
-            //         top: 0
-            //     }); 
-            // }
         }
 
 
@@ -156,19 +141,13 @@ $(function() {
         $(window).resize( function(e){
             scrollHP();
         });
-        $(window).load( function(e){
-            scrollHP();
-            $('#HomeSlider').addClass('on');
+        scrollHP();
 
-        });
-
-});
-
-
+})(jQuery);
 </script>
 <?php endif; ?>
 <script>
-$(function() {
+(function($) {
 
 
     $('.hamburger').on('click', function(){
@@ -196,10 +175,9 @@ $(function() {
       $('#masthead').css('-webkit-text-stroke', '0.5px');
     }
 
-});
-
-
+})(jQuery);
 </script>
+
 <?php if($devmode == flase) :?>
 <iframe src=" http://m.mlb.com/third_party_footer?c_id=sf&no_links=false" frameBorder="0" scrolling="no" style="background-color:#1e1e1e;width:100%; height:151px; overflow:hidden; border:none; margin:0 0 -10px 0;"></iframe>
 <?php endif; ?>

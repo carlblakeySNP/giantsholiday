@@ -27,9 +27,9 @@ get_header(); ?>
 
         <div class="grid text-group">
             <div class="block-2">
-                <a href="/">
-                    <h3><span><?php echo $date; ?></span><br /><?php the_title(); ?></h3>
-                </a>
+                
+                <h3 class="orange"><span><?php echo $date; ?></span><br /><?php the_title(); ?></h3>
+                
                 <br />
                 <?php if(get_field('event_active')) :?>
                     <a href="<?php the_field('link'); ?>" class="button_box" target="_blank"><?php the_field('button_text'); ?></a>

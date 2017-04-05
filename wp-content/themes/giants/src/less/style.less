@@ -15,12 +15,12 @@
 #content {
 	border-top: 101px solid @black;
 }
-.about,
-.venues{
-	#content {
-		border-width: 144px 0 0;
-	}
-}
+// .about,
+// .venues{
+// 	#content {
+// 		border-width: 144px 0 0;
+// 	}
+// }
 .about-below{
 	h4{
 		color:@orange;
@@ -225,10 +225,11 @@ header#masthead{
 
 
 #HomeSlider{
-	opacity:0;
-	transition: opacity 0.6s;
-	&.on{
-		opacity:1
+	.home-gallery {
+		height: 100%;
+	}
+	.slick-list, .slick-track {
+		height: 100%;
 	}
 	.slick-item{
 		position: relative;
@@ -763,6 +764,9 @@ header#masthead{
 	overflow: hidden;
 }
 .touch-slider{
+	.slick-list, .slick-track {
+		height: 100%;
+	}
 	.slick-item{
 		position: relative;
 		background: no-repeat center 100%;
@@ -790,14 +794,13 @@ header#masthead{
 }
 .home-gallery,
 .slick-gallery{
+	.slick-list, .slick-track {
+		height: 100%;
+	}
 	&.events-header{
 		margin-bottom: 80px;
 	}
-	opacity:0;
-	transition:opacity 0.2s;
-	&.on{
-		opacity:1;
-	}
+	background-color: #333;
 	.slick-item{
 		position: relative;
 		background: no-repeat center 100%;
@@ -1905,14 +1908,16 @@ footer {
 		text-align: center;
 	}
 	.touch-slider{
+		height: 450px;
 		.slick-item{
-			height: 450px;
+			height: 100%;
 		}
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 350px;
 		.slick-item{
-			height: 350px;
+			height: 100%;
 			.caption{
 				.text{
 					left:10px;
@@ -1925,8 +1930,9 @@ footer {
 	}
 	.slick-gallery,
 	#HomeSlider{
+		height:320px;
 		.slick-item{
-			height:320px;
+			height: 100%;
 			.overlay{
 				.overlay-left{
 					font-size: 12px;
@@ -2287,19 +2293,22 @@ footer{
 		}
 	}
 	.touch-slider{
+		height: 450px;
 		.slick-item{
-			height: 450px;
+			height: 100%;
 		}
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 500px;
 		.slick-item{
-			height: 500px;
+			height: 100%;
 		}	
 	}
 	#HomeSlider{
+		height:500px;
 		.slick-item{
-			height:500px;
+			height: 100%;
 		}
 	}
 	.inside-slider{
@@ -2320,8 +2329,9 @@ footer{
 
 
 	.touch-slider{
+		height: 500px;
 		.slick-item{
-			height: 500px;
+			height: 100%
 		}
 	}
 	.container{
@@ -2329,13 +2339,15 @@ footer{
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 500px;
 		.slick-item{
-			height: 500px;
+			height: 100%;
 		}
 	}
 	#HomeSlider{
+		height:500px;
 		.slick-item{
-			height:500px;
+			height: 100%;
 		}
 	}
 	.inside-slider{
@@ -2477,19 +2489,22 @@ footer{
 @media only screen and (min-width : 1400px) {
 
 	.touch-slider{
+		height: 600px;
 		.slick-item{
-			height: 600px;
+			height: 100%;
 		}
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 600px;
 		.slick-item{
-			height: 600px;
+			height: 100%;
 		}	
 	}
 	#HomeSlider{
+		height:600px;
 		.slick-item{
-			height:600px;
+			height: 100%;
 		}
 	}
 	.inside-slider{
@@ -2508,19 +2523,22 @@ footer{
 }
 @media only screen and (min-width : 1600px) {
 	.touch-slider{
+		height: 700px;
 		.slick-item{
-			height: 700px;
+			height: 100%;
 		}
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 850px;
 		.slick-item{
-			height: 850px;
+			height: 100%;
 		}	
 	}
 	#HomeSlider{
+		height:850px;
 		.slick-item{
-			height:850px;
+			height: 100%;
 		}
 	}
 	.inside-slider{
@@ -2539,19 +2557,22 @@ footer{
 }
 @media only screen and (min-width : 2400px) {
 	.touch-slider{
+		height: 700px;
 		.slick-item{
-			height: 700px;
+			height: 100%;
 		}
 	}
 	.home-gallery,
 	.slick-gallery{
+		height: 950px;
 		.slick-item{
-			height: 950px;
+			height: 100%;
 		}	
 	}
 	#HomeSlider{
+		height:950px;
 		.slick-item{
-			height:950px;
+			height: 100%
 		}
 	}
 	.inside-slider{
