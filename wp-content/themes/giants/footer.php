@@ -59,9 +59,8 @@
         </div>  
     </footer>
 </div>
+<?php wp_footer(); ?>
 
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/build/js/main.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
 <script>
 
@@ -181,6 +180,6 @@ if(is_front_page()) :
 <?php if($devmode == flase) :?>
 <iframe src=" http://m.mlb.com/third_party_footer?c_id=sf&no_links=false" frameBorder="0" scrolling="no" style="background-color:#1e1e1e;width:100%; height:151px; overflow:hidden; border:none; margin:0 0 -10px 0;"></iframe>
 <?php endif; ?>
-<?php wp_footer(); ?>
+
 </body>
 </html>

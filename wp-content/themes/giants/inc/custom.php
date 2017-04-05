@@ -35,5 +35,13 @@ function remove_autop( $content )
     return $content;
 }
 
+// include custom jQuery
+function include_custom_jquery() {
+
+	wp_enqueue_script('main', get_stylesheet_directory_uri().'/build/js/main.min.js', array('jquery'), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'include_custom_jquery');
+
 
 ?>
