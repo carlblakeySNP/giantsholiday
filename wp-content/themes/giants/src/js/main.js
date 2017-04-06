@@ -1,128 +1,70 @@
 (function($){
-        $('scrollHP').slick({
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 6000,
-            pauseOnHover: false,
-            speed: 600,
-        });
-        
-        $('.slick-gallery').slick({
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 6000,
-            pauseOnHover: false,
-            speed: 600,
-        }).on('click', function( e, slick, currentSlide ) {
-            $('.slick-gallery').slick('slickPause');
-        });
-        function slick_scroll(){
-            var h = parseInt($(window).height(), 0),
-            w = parseInt($(window).width(), 0),
-            sp = parseInt($(window).scrollTop(), 0),
-            np = 1-(sp/h);
-    
-            $('.touch-slider .slick-item').each(function(){
-                var self = $(this);
-                var el = $(self).offset();
-                var elt = sp - (el.top-h);
-                
-                if(elt > 0){
-                    var j = 100 - (elt/h*100);
-                    $(self).css('background-position', 'center '+j+'%');
-                }
-            });
-            $('.slick-gallery .slick-item').each(function(){
-                var self = $(this);
-                var el = $(self).offset();
-                var elt = sp - (el.top-h);
-                
-                if(elt > 0){
-                    var j = 150 - (elt/h*100);
-                    $(self).css('background-position', 'center '+j+'%');
-                }
 
-            });
-        }
-        $(window).scroll( function(e){
-          slick_scroll();
-        });
-        $(window).load( function(e){
-          slick_scroll();
-          $('.slick-gallery').addClass('on');
-        });
-        $('.trigger-modal').click(function (e) {
-            $("#modal").modal();
-            $("iframe#ytplayer").attr("src", $("iframe#ytplayer").attr("src").replace("autoplay=0", "autoplay=1"));
-            return false;
-        });
+    $('.slick').slick({
+        slidesToShow: 2,
+        arrows: true,
+        pauseOnHover: false,
+        dot: false
+    });
+    $('scrollHP').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: false,
+        speed: 600,
+    });
 
+    $('.slick-gallery').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: false,
+        speed: 600,
+    });
+    function slick_scroll(){
+        var h = parseInt($(window).height(), 0),
+        w = parseInt($(window).width(), 0),
+        sp = parseInt($(window).scrollTop(), 0),
+        np = 1-(sp/h);
 
-
-
-$('.slick').slick({
-                slidesToShow: 2,
-                arrows: true,
-                pauseOnHover: false,
-                dot: false
-            });
-            $('.slick-gallery').slick({
-                dots: true,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 6000,
-                pauseOnHover: false,
-                speed: 600,
-            });
-            $('.trigger-modal').click(function (e) {
-                $("#modal").modal();
-                $("iframe#ytplayer").attr("src", $("iframe#ytplayer").attr("src").replace("autoplay=0", "autoplay=1"));
-                return false;
-            });
-            function slick_scroll(){
-                var h = parseInt($(window).height(), 0),
-                    w = parseInt($(window).width(), 0),
-                    sp = parseInt($(window).scrollTop(), 0),
-                    np = 1-(sp/h);
-        
-                $('.touch-slider .slick-item').each(function(){
-                    var self = $(this);
-                    var el = $(self).offset();
-                    var elt = sp - (el.top-h);
-                    
-                    if(elt > 0){
-                        var j = 100 - (elt/h*100);
-                        $(self).css('background-position', 'center '+j+'%');
-                    }
-                });
-                $('.slick-gallery .slick-item').each(function(){
-                    var self = $(this);
-                    var el = $(self).offset();
-                    var elt = sp - (el.top-h);
-                    
-                    if(elt > 0){
-                        var j = 150 - (elt/h*100);
-                        $(self).css('background-position', 'center '+j+'%');
-                    }
-                    var copy = self.data('slide');
-                    var img = self.data('img');
-                    var layout = self.data('layout');
-                    self.find('.overlay-left').html(copy);
-                    if(img != ''){
-                        self.find('.overlay-right').html('<img src="'+img+'" />');
-                    }
-
-                });
+        $('.touch-slider .slick-item').each(function(){
+            var self = $(this);
+            var el = $(self).offset();
+            var elt = sp - (el.top-h);
+            
+            if(elt > 0){
+                var j = 100 - (elt/h*100);
+                $(self).css('background-position', 'center '+j+'%');
             }
-            $(window).scroll( function(e){
-                slick_scroll();
-            });
-            $(window).load( function(e){
-                slick_scroll();
-                $('.slick-gallery').addClass('on');
-            });
+        });
+        $('.slick-gallery .slick-item').each(function(){
+            var self = $(this);
+            var el = $(self).offset();
+            var elt = sp - (el.top-h);
+            
+            if(elt > 0){
+                var j = 150 - (elt/h*100);
+                $(self).css('background-position', 'center '+j+'%');
+            }
+
+        });
+    }
+    $(window).scroll( function(e){
+      slick_scroll();
+    });
+    $(window).load( function(e){
+      slick_scroll();
+      $('.slick-gallery').addClass('on');
+    });
+    $('.trigger-modal').click(function (e) {
+        $("#modal").modal();
+        $("iframe#ytplayer").attr("src", $("iframe#ytplayer").attr("src").replace("autoplay=0", "autoplay=1"));
+        return false;
+    });
+
+        
 
 
 
