@@ -1,5 +1,5 @@
 (function($){
-$('scrollHP').slick({
+        $('scrollHP').slick({
             dots: true,
             arrows: false,
             autoplay: true,
@@ -7,6 +7,7 @@ $('scrollHP').slick({
             pauseOnHover: false,
             speed: 600,
         });
+        
         $('.slick-gallery').slick({
             dots: true,
             arrows: false,
