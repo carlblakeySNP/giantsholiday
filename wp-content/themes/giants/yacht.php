@@ -226,16 +226,7 @@
 
             });
         });
-        $('#text-slideshow').slick({
-            dots:true,
-            arrows:false
-        });
-        var max = -1;
-        $("#text-slideshow .large-feature").each(function() {
-            var h = $(this).height(); 
-            max = h > max ? h : max;
-        });
-        $("#text-slideshow .large-feature").height(max+'px')
+
 
     })(jQuery)
 </script>
