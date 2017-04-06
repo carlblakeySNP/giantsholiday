@@ -23,7 +23,6 @@ var tags = '';					// apples, oranges, bananas
 
 gulp.task('scripts', function() {
     gulp.src([
-    		'src/js/plugins/jquery.min.js',
             'src/js/plugins/slick.js',
             'src/js/plugins/jquery.simplemodal-1.4.4.js',
     		'src/js/main.js'
