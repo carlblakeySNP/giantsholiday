@@ -1,28 +1,33 @@
 (function($){
+    function loaded(){
+        $('.slick').addClass('active');
+        $('.slick-scrollHP').addClass('active');
+        $('.slick-gallery').addClass('active');
 
-    $('.slick').slick({
-        slidesToShow: 2,
-        arrows: true,
-        pauseOnHover: false,
-        dot: false
-    });
-    $('scrollHP').slick({
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        pauseOnHover: false,
-        speed: 600,
-    });
+        $('.slick').slick({
+            slidesToShow: 2,
+            arrows: true,
+            pauseOnHover: false,
+            dot: false
+        });
+        $('scrollHP').slick({
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            pauseOnHover: false,
+            speed: 600,
+        });
 
-    $('.slick-gallery').slick({
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        pauseOnHover: false,
-        speed: 600,
-    });
+        $('.slick-gallery').slick({
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            pauseOnHover: false,
+            speed: 600,
+        });
+    }
     function slick_scroll(){
         var h = parseInt($(window).height(), 0),
         w = parseInt($(window).width(), 0),
@@ -55,6 +60,7 @@
       slick_scroll();
     });
     $(window).load( function(e){
+        loaded();
       slick_scroll();
       $('.slick-gallery').addClass('on');
     });

@@ -38,6 +38,12 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/src/js/plugins/jquery.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/src/js/plugins/slick.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/src/js/plugins/jquery.simplemodal-1.4.4.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/build/js/main.min.js'; ?>"></script>
+
+
 <script type="text/javascript" src="//use.typekit.net/czq2nci.js"></script>
 <script type="text/javascript">try{Typekit.load({ async: true });}catch(e){}</script>
 

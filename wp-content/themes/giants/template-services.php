@@ -178,6 +178,7 @@ get_header();
 <!-- /Modal -->
 <script>
 (function($) {
+    
 <?php echo $script; ?>
     
     function ch_scroll(){

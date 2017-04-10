@@ -35,6 +35,14 @@ function remove_autop( $content )
     return $content;
 }
 
+add_filter( 'wp_enqueue_scripts', 'change_default_jquery' );
+
+function change_default_jquery( ){
+    wp_dequeue_script( 'jquery');
+    wp_deregister_script( 'jquery');   
+}
+
+
 // include custom jQuery
 function include_custom_jquery() {
 
@@ -44,7 +52,7 @@ function include_custom_jquery() {
 
 
 }
-add_action('wp_enqueue_scripts', 'include_custom_jquery');
+//add_action('wp_enqueue_scripts', 'include_custom_jquery');
 
 
 ?>
