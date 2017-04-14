@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Giants Services
+Template Name: Giants Services Lite
 */
 
 get_header();
@@ -57,7 +57,7 @@ get_header();
 
     </div><!-- .entry-header -->
 
-    <div class="services">
+    <div class="services services-lite">
         <div class="container">
 <?php 
                 $video_title = get_field('video_title');
@@ -123,11 +123,11 @@ get_header();
                     
                     
                     if(count($slides) > 1 ){
-                        echo '<div class="slideshow show'.$j.'">';
+                        echo '<div class="container"><div class="slideshow show'.$j.'">';
                         foreach($slides as $slide){
-                            echo '<div class="slide" style="background-image:url('.$slide['case_study_slideshow_image']['url'].');"></div>';
+                            echo '<div class="slide" style="background-image:url('.$slide['case_study_slideshow_image']['sizes']['full-columns'].');"></div>';
                         }
-                        echo '</div>';
+                        echo '</div></div>';
                         $script .= "$('.show".$j."').slick({dots: false,arrows: true,autoplay: true,autoplaySpeed: 6000,speed: 600,pauseOnHover: false});";
                         $j++;
                     }
