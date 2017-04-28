@@ -178,7 +178,7 @@ if(is_front_page()) :
 </script>
 
 
-<iframe src=" http://m.mlb.com/third_party_footer?c_id=sf&no_links=false" frameBorder="0" scrolling="no" style="background-color:#1e1e1e;width:100%; height:151px; overflow:hidden; border:none; margin:0 0 -10px 0;"></iframe>
+<!--<iframe src=" http://m.mlb.com/third_party_footer?c_id=sf&no_links=false" frameBorder="0" scrolling="no" style="background-color:#1e1e1e;width:100%; height:151px; overflow:hidden; border:none; margin:0 0 -10px 0;"></iframe>-->
 
 </body>
 </html>
