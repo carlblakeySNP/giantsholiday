@@ -84,13 +84,10 @@
 			</div>
 			<?php endif; ?>
 			<?php if(is_page_template( 'template-yacht.php' )) : ?>
+
 			<div class="submenu-wrap">
-				<ul class="submenu container">
-					<li><a href="#about">About Bay Yachting</a></li>
-					<li><a href="#yacht">The Yachts</a></li>
-					<li><a href="#experience">The Experience</a></li>
-					<li><a href="#events">Private Events</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'yacht', 'items_wrap' => '<ul id="%1$s" class="submenu container">%3$s</ul>') ); ?>
+
 			</div>
 			<?php endif; ?>
 		</nav><!-- #site-navigation -->

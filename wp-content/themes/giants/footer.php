@@ -49,7 +49,15 @@
                     <div class="copyright"><?php dynamic_sidebar( 'social' ); ?></div>
                     <br />
 
-                    <?php echo  do_shortcode('[contact-form-7 id="1265" title="Newsletter Email"]'); ?>
+                    <?php 
+                    global $devmode;
+                    if($devmode){
+                        echo do_shortcode('[contact-form-7 id="1012" title="Newsletter Email"]');
+                    }else{
+                        echo do_shortcode('[contact-form-7 id="1265" title="Newsletter Email"]');
+                    }
+
+                     ?>
 
 
                     <br /><br />

@@ -30,24 +30,5 @@ get_header();
 
     <?php endif; ?>
 
-<script type="text/javascript">
-(function($){   
 
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            var topoffset = 100;
-            target = target.length ? target : $('[id=' + this.hash.slice(1) +']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top - topoffset
-                }, 800 );
-                return false;
-            }
-        }
-    });
-
-})(jQuery);    
-
-</script>
 <?php get_footer(); ?>

@@ -188,6 +188,10 @@ function giants_setup() {
 	register_nav_menus( array(
 		'footer' => __( 'Footer Menu', 'giants' ),
 	) );
+
+	register_nav_menus( array(
+		'yacht' => __( 'Yacht Sub Menu', 'giants' ),
+	) );
 	
 	/*
 	 * Switch default core markup for search form, comment form, and comments

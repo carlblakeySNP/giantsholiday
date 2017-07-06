@@ -144,7 +144,7 @@
             $('.submenu li').removeClass('current_page_item');
             $(this).parent().addClass('current_page_item');
             var target = $(this.hash);
-            var topoffset = 1000;
+            var topoffset = 120;
             target = target.length ? target : $('[id=' + this.hash.slice(1) +']');
             if (target.length) {
                 $('html,body').animate({
