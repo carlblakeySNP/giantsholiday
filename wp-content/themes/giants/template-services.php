@@ -123,11 +123,12 @@ get_header();
                     
                     
                     if(count($slides) > 1 ){
-                        echo '<div class="slideshow show'.$j.'">';
+                        echo '<div class="container"><div class="slideshow show'.$j.'">';
                         foreach($slides as $slide){
+                            //print_r($slide);
                             echo '<div class="slide" style="background-image:url('.$slide['case_study_slideshow_image'].');"></div>';
                         }
-                        echo '</div>';
+                        echo '</div></div>';
                         $script .= "$('.show".$j."').slick({dots: false,arrows: true,autoplay: true,autoplaySpeed: 6000,speed: 600,pauseOnHover: false});";
                         $j++;
                     }
