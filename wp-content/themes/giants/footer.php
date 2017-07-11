@@ -77,7 +77,7 @@
         container: 'map', // container id
         style: 'mapbox://styles/rdavis/ciu8udbxb001p2ilftmbfm2pn', //stylesheet location
         center: [-122.3895,37.7785], // starting position
-        zoom: 16 // starting zoom
+        zoom: 15 // starting zoom
     });
     map.scrollZoom.disable();
     map.addControl(new mapboxgl.Navigation());

@@ -40,7 +40,7 @@ a {
 }
 
 
-h1,h2,h3,h4,h5,h6,p{font-weight: 200;}
+h1,h2,h3,h4,h5,h6,p,li{font-weight: 200;}
 b,strong{font-weight:600;}
 h1{font-size: 24px;}
 h2{font-size: 22px;}
@@ -1233,6 +1233,7 @@ i.icon{
 		}
 	}
 }
+
 .content-item{
 	&.venues{
 		.top-item{
@@ -2294,18 +2295,20 @@ footer{
 			height:300px;
 		}
 	}
-		.large-feature{
-		
+	.large-feature{
 		padding: 60px 0;
+		position: relative;
+		margin-bottom:200px;
 		.container{
+			position: absolute;
+			bottom:-200px;
+			max-width: 100%;
+			margin:0;
 			text-align: center;
 		}
 		.box{
-
-			width: 70%;
-
-
-
+			min-height: 200px;
+			width: 100%;
 		}
 	}
 }
