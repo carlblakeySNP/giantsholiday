@@ -13,7 +13,7 @@
             echo '<div class="slick-gallery">';
             while ( have_rows('page_gallery') ) : the_row();
                 // display a sub field value
-                echo '<div class="slick-item" style="background-image:url('.get_sub_field('page_gallery_image')['sizes']['large'].');">';
+                echo '<div class="slick-item" style="background-image:url('.get_sub_field('page_gallery_image')['sizes']['slideshow'].');">';
 
                 if(get_sub_field('page_gallery_video_code') != ''){
 
@@ -117,7 +117,7 @@
                 $image = get_sub_field('image');
             ?>
 
-        <div class="large-feature" style="background-image: url(<?php echo $image['sizes']['large']; ?>);">
+        <div class="large-feature" style="background-image: url(<?php echo $image['sizes']['slideshow']; ?>);">
             <div class="container">
                 <div class="box">
                     <h3><?php echo $title; ?></h3>
