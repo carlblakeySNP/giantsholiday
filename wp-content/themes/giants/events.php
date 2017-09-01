@@ -176,7 +176,7 @@ $args = array( 'order' => 'ASC',);
 $terms = get_terms( 'eventyear', $args );
  if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
      foreach ( $terms as $term ) :
-        echo '<h3>'.$term->slug.'</h3>';
+        
                // query arguments
                 $args = array(
                     'post_type' => 'gevent',
@@ -204,7 +204,7 @@ $terms = get_terms( 'eventyear', $args );
                 $loop = new WP_Query( $args );
 
                 if($loop->have_posts()) :
-
+                    echo '<h3>'.$term->slug.'</h3>';  
                     ?>
                 <?php
 
